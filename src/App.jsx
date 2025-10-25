@@ -8004,7 +8004,7 @@ const booksData = {
     id: "ai_ml_5",
     title: "Artificial Intelligence and Machine Language : Part V",
     icon: BrainCircuit,
-    color: "#fdfdfd",
+    color: "#efeff0",
     description: "MLOps and Advanced Systems",
     units: [
       {
