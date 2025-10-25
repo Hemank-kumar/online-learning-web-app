@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Book, Code, Layout, Palette, Database, Globe, Moon, Sun, Search, ChevronRight, ChevronDown, BookOpen, Cpu, Smartphone, Menu, Zap, Shield, Server, Type, Aperture, Layers, BlocksIcon, FileJson } from 'lucide-react';
+import { Book, Code, Layout, Palette, Database, Globe, Moon, Sun, Search, ChevronRight, ChevronDown, BookOpen, Cpu, Smartphone, Menu, Zap, Shield, Server, Type, Aperture, Layers, BlocksIcon, FileJson, BrainCircuit, BrainCircuitIcon } from 'lucide-react';
 
 const booksData = {
   frontend: {
@@ -4023,9 +4023,2060 @@ const booksData = {
     ]
   }
 ]
+  },
+  ai_ml_1: {
+    id: 'ai_ml_1',
+    title: 'Artificial Intelligence and Machine Language : Part I',
+    icon: BrainCircuit,
+    color: '#6deaf9',
+    description: 'Foundations, Math, and Data',
+    units: [
+  {
+    "id": 1,
+    "title": "Math: Linear Algebra and Vector Spaces ➗",
+    "icon": "Code",
+    "subsections": [
+      {
+        "title": "Vectors, Matrices, and Tensors",
+        "content": "Mastering **Linear Algebra** as the foundation of data representation and transformation. Covers **Vectors** (data points), **Matrices** (datasets/weights), and **Tensors** (multi-dimensional arrays, core unit of deep learning frameworks). Emphasizes data shape and dimensionality.",
+        "codeExample": "/* NumPy Tensor Initialization (3D array) */\nimport numpy as np\n# 2x3x4 tensor (e.g., 2 batches, 3 channels, 4 pixels)\nX = np.zeros((2, 3, 4))\nprint(X.shape)"
+      },
+      {
+        "title": "Dot Product and Matrix Multiplication",
+        "content": "Understanding the **Dot Product** and **Matrix Multiplication** as the operations governing similarity and layer output in neural networks. Explains the required dimensionality match for matrix multiplication (e.g., $A_{m \times n} \cdot B_{n \times p} = C_{m \times p}$).",
+        "codeExample": "/* NumPy Matrix Multiplication */\nimport numpy as np\nA = np.array([[1, 2], [3, 4]])\nB = np.array([[5], [6]])\n\n# Dot product (Matrix Multiplication)\nC = np.dot(A, B)\n# Output: [[17], [39]]"
+      },
+      {
+        "title": "Matrix Inverse and Solving Linear Systems",
+        "content": "Covers the **Matrix Inverse** ($A^{-1}$) and its use in solving linear equations ($Ax = b$) directly, particularly relevant to algorithms like the closed-form solution for **Linear Regression (Normal Equation)**.",
+        "codeExample": "/* NumPy Inverse and Solution */\n# x = A^-1 * b\nimport numpy.linalg as la\nA = np.array([[1, 2], [3, 4]])\nb = np.array([5, 6])\n# x = la.solve(A, b)"
+      },
+      {
+        "title": "Eigenvalues, Eigenvectors, and PCA",
+        "content": "Understanding **Eigenvalues** and **Eigenvectors** as properties of a matrix that reveal its transformation behavior. Explains their application in **Principal Component Analysis (PCA)** for dimensionality reduction and data decorrelation.",
+        "codeExample": "/* Conceptual PCA Goal */\n# Find the eigenvectors corresponding to the largest eigenvalues of the covariance matrix."
+      },
+      {
+        "title": "Vector Norms (L1 and L2) and Regularization",
+        "content": "Measuring the magnitude of vectors. Covers **L2 Norm (Euclidean distance)**, used for measuring vector length and as the penalty term in Ridge Regression. Details **L1 Norm (Manhattan distance)**, used in Lasso Regression for promoting sparsity (setting weights to zero).",
+        "codeExample": "/* NumPy L2 Norm (Squared) */\nweights = np.array([3, -4])\n# L2 Norm Squared: 3² + (-4)² = 25\nL2_norm_sq = np.sum(weights**2)"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Math: Calculus, Gradients, and Optimization 📈",
+    "icon": "Code",
+    "subsections": [
+      {
+        "title": "Derivatives and Partial Derivatives",
+        "content": "The core tool for optimization. Covers the **Derivative** (rate of change) for single-variable functions and **Partial Derivatives** (rate of change with respect to a single variable) for multi-variable functions (like loss functions).",
+        "codeExample": "/* Derivative Example (Conceptual) */\n# Function: f(x) = x² + 2x\n# Derivative: f'(x) = 2x + 2"
+      },
+      {
+        "title": "The Gradient Vector",
+        "content": "Defines the **Gradient** ($\nabla$) as the vector of all partial derivatives. Explains the central role of the gradient: it points in the direction of the **steepest increase** of the function, which is the key guide for **Gradient Descent**.",
+        "codeExample": "/* Gradient Descent Update Rule */\n# W_new = W_old - (Learning_Rate * ∇L(W))"
+      },
+      {
+        "title": "The Chain Rule and Backpropagation",
+        "content": "Mastering the **Chain Rule**, which allows calculating the derivative of composite functions. Explains that **Backpropagation** is the iterative application of the chain rule across the layers of a neural network to efficiently compute the gradient of the loss with respect to every weight.",
+        "codeExample": "/* Chain Rule Flow (Conceptual) */\n# ∂L/∂w = (∂L/∂a) * (∂a/∂z) * (∂z/∂w)"
+      },
+      {
+        "title": "Hessian Matrix and Second-Order Optimization",
+        "content": "Covers the **Hessian Matrix** (matrix of second-order partial derivatives), used to determine if a stationary point is a maximum, minimum, or saddle point. Explains its role in second-order optimization algorithms (like Newton's method), which are fast but computationally expensive in high dimensions.",
+        "codeExample": "/* Hessian Role (Conceptual) */\n# Used to assess curvature and accelerate optimization convergence."
+      },
+      {
+        "title": "Convexity, Local Minima, and Saddle Points",
+        "content": "Analyzing the optimization landscape. Defines **Convexity** (guaranteed global minimum) vs. **Non-Convexity** (common in deep learning, prone to **Local Minima** and **Saddle Points**). Covers the challenge of escaping saddle points during training.",
+        "codeExample": "/* Non-Convex Landscape */\n# Deep neural networks have non-convex loss surfaces."
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Math: Probability and Statistical Modeling 🎲",
+    "icon": "Code",
+    "subsections": [
+      {
+        "title": "Probability Distributions (Normal, Bernoulli)",
+        "content": "Understanding data randomness. Covers key distributions: **Normal (Gaussian)** (used widely, underlies many statistical tests), **Bernoulli** (binary outcomes, used in logistic regression), and **Multinomial** (multiple discrete outcomes, used in classification).",
+        "codeExample": "/* Python Normal Distribution */\nimport numpy as np\n# Generate 100 samples from a standard normal distribution (mean=0, std=1)\nsamples = np.random.randn(100)"
+      },
+      {
+        "title": "Bayes' Theorem and Conditional Probability",
+        "content": "Mastering **Bayes' Theorem** ($P(A|B) = \frac{P(B|A)P(A)}{P(B)}$), which updates the probability of a hypothesis ($A$) based on new evidence ($B$). Essential foundation for **Naïve Bayes** classifiers and general probabilistic modeling.",
+        "codeExample": "/* Conceptual Bayes' Rule */\n# P(Model|Data) ∝ P(Data|Model) * P(Model)"
+      },
+      {
+        "title": "Descriptive Statistics (Mean, Median, Variance)",
+        "content": "Summarizing data characteristics. Covers **Mean, Median, Mode** (central tendency), **Variance** and **Standard Deviation** (spread), and **Skewness/Kurtosis** (shape). Essential for **Exploratory Data Analysis (EDA)** and preprocessing.",
+        "codeExample": "/* Pandas Descriptive Stats */\nimport pandas as pd\ndf = pd.DataFrame({'A': [10, 20, 30]})\nmean = df['A'].mean()\nstd_dev = df['A'].std()"
+      },
+      {
+        "title": "Hypothesis Testing (p-value) and Significance",
+        "content": "Drawing conclusions from data. Covers **Hypothesis Testing** (Null vs. Alternative Hypothesis). Defines the **p-value** (the probability of observing the data given the null hypothesis is true) and setting the **significance level** ($\alpha$, typically 0.05).",
+        "codeExample": "/* Conceptual Hypothesis Test */\n# Null Hypothesis (H0): Model A and Model B perform equally well.\n# If p-value < 0.05, we reject H0."
+      },
+      {
+        "title": "Covariance and Correlation",
+        "content": "Measuring relationships between variables. Covers **Covariance** (measures the joint variability of two variables) and **Correlation** (normalized covariance, ranging from -1 to +1). Essential for feature selection and understanding multicollinearity.",
+        "codeExample": "/* NumPy Correlation Matrix */\nimport numpy as np\n# np.corrcoef(data) returns the correlation matrix."
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Python Ecosystem & NumPy/Pandas 🐍",
+    "icon": "List",
+    "subsections": [
+      {
+        "title": "Python for Data Science (Jupyter, Environments)",
+        "content": "Setting up the development environment. Covers using **Anaconda/Miniconda** for managing packages and environments. Details interactive coding in **Jupyter Notebooks/Labs** and version control using **Git/GitHub**.",
+        "codeExample": "/* Conda Environment Management */\n# Create a new environment\nconda create -n ml_env python=3.10\n\n# Activate the environment\nconda activate ml_env"
+      },
+      {
+        "title": "NumPy: Array Computing and Vectorization",
+        "content": "The fundamental library for numerical operations. Covers the **`ndarray`** object for efficient storage and manipulation of numerical data. Explains **Vectorization**—writing code that operates on entire arrays at once, drastically improving speed over Python loops.",
+        "codeExample": "/* NumPy Vectorization */\nimport numpy as np\nA = np.array([1, 2, 3])\nB = np.array([4, 5, 6])\n# Vectorized addition (fast)\nC = A + B # Output: [5, 7, 9]"
+      },
+      {
+        "title": "Pandas: DataFrames and Series",
+        "content": "The core library for data manipulation. Covers the **`DataFrame`** (tabular data structure) and **`Series`** (single column/vector). Details indexing, slicing, and column selection for data querying and cleaning.",
+        "codeExample": "/* Pandas DataFrame Creation */\nimport pandas as pd\ndata = {'col1': [1, 2], 'col2': [3, 4]}\ndf = pd.DataFrame(data)\nprint(df['col1'])"
+      },
+      {
+        "title": "SciPy: Scientific Computing Tools",
+        "content": "Using **SciPy** for specialized scientific and statistical functions. Covers modules for **Optimization** (minimizing functions), **Linear Algebra**, **Interpolation**, and **Statistical Tests** (e.g., T-tests, ANOVA).",
+        "codeExample": "/* SciPy Optimization */\nfrom scipy.optimize import minimize\n# minimize(function_to_minimize, initial_guess)"
+      },
+      {
+        "title": "Scikit-learn: The ML Workhorse",
+        "content": "Mastering **Scikit-learn** for classical ML algorithms. Covers the standardized **fit/predict/transform** API, which is consistent across all models (regression, classification, clustering). Essential for rapid prototyping and deployment of traditional ML.",
+        "codeExample": "/* Scikit-learn API */\nfrom sklearn.linear_model import LinearRegression\n\nmodel = LinearRegression()\n# Training phase\nmodel.fit(X_train, y_train)\n# Prediction phase\ny_pred = model.predict(X_test)"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Supervised Learning: Regression and Classification 🎯",
+    "icon": "List",
+    "subsections": [
+      {
+        "title": "Linear Regression and Assumptions",
+        "content": "The basic predictive model. Covers **Linear Regression** for predicting continuous outcomes. Details the core assumptions: **Linearity, Independence, Homoscedasticity, and Normality** of residuals (LINE), and the impact of violating these assumptions.",
+        "codeExample": "/* Linear Regression in Scikit-learn */\nfrom sklearn.linear_model import LinearRegression\n# model.fit(X, y)"
+      },
+      {
+        "title": "Logistic Regression and Probabilistic Output",
+        "content": "The core classification model. Covers **Logistic Regression** for predicting binary (0/1) or multi-class outcomes. Explains the **Sigmoid Function** ($\sigma(z) = \frac{1}{1+e^{-z}}$) used to map linear input to a probability between 0 and 1, and the **Cross-Entropy Loss** function.",
+        "codeExample": "/* Logistic Regression (Binary Classification) */\nfrom sklearn.linear_model import LogisticRegression\n# model.fit(X, y) # Predicts probability of belonging to class 1."
+      },
+      {
+        "title": "Naïve Bayes Classifiers",
+        "content": "A simple probabilistic model. Covers **Naïve Bayes** models, based on Bayes' theorem and the strong, often unrealistic, assumption of **conditional independence** between features. Highly effective for simple text classification (e.g., spam filtering).",
+        "codeExample": "/* Naïve Bayes in Scikit-learn */\nfrom sklearn.naive_bayes import GaussianNB\n# model = GaussianNB()\n# model.fit(X_train, y_train)"
+      },
+      {
+        "title": "Support Vector Machines (SVM)",
+        "content": "A powerful non-linear classifier. Covers **Support Vector Machines (SVM)**, which find the optimal **Hyperplane** that maximizes the margin between data points of different classes. Explains the **Kernel Trick** for mapping data to a higher-dimensional space to achieve linearity.",
+        "codeExample": "/* SVM in Scikit-learn */\nfrom sklearn.svm import SVC\n# model = SVC(kernel='linear')\n# model.fit(X, y)"
+      },
+      {
+        "title": "K-Nearest Neighbors (k-NN)",
+        "content": "A non-parametric, instance-based learning algorithm. Covers **k-NN** where classification is based on the majority vote of the 'k' closest data points in the feature space. Focuses on the importance of distance metrics and computational cost.",
+        "codeExample": "/* k-NN in Scikit-learn */\nfrom sklearn.neighbors import KNeighborsClassifier\n# model = KNeighborsClassifier(n_neighbors=5)\n# model.fit(X, y)"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Unsupervised Learning: Clustering and Dimensionality 🧩",
+    "icon": "Code",
+    "subsections": [
+      {
+        "title": "k-Means Clustering Algorithm",
+        "content": "The basic partitioning method. Covers **k-Means Clustering**, which groups data points into $k$ clusters by minimizing the variance within each cluster. Details the iterative process of **centroid assignment and updating** and the challenge of choosing the optimal value for $k$.",
+        "codeExample": "/* k-Means in Scikit-learn */\nfrom sklearn.cluster import KMeans\n# model = KMeans(n_clusters=4, random_state=0)\n# model.fit(X)"
+      },
+      {
+        "title": "DBSCAN Clustering",
+        "content": "A density-based clustering algorithm. Covers **DBSCAN (Density-Based Spatial Clustering of Applications with Noise)**, which groups together points that are closely packed (high density) and marks points in low-density regions as **outliers/noise**. Effective for finding clusters of arbitrary shape.",
+        "codeExample": "/* DBSCAN in Scikit-learn */\nfrom sklearn.cluster import DBSCAN\n# model = DBSCAN(eps=0.5, min_samples=5)\n# model.fit(X)"
+      },
+      {
+        "title": "Principal Component Analysis (PCA)",
+        "content": "A linear method for **Dimensionality Reduction**. Covers **PCA**, which finds orthogonal **Principal Components** that maximize the variance of the data, projecting the data onto a lower-dimensional subspace while preserving the most important information.",
+        "codeExample": "/* PCA in Scikit-learn */\nfrom sklearn.decomposition import PCA\n# model = PCA(n_components=2) # Reduce to 2 dimensions\n# X_reduced = model.fit_transform(X)"
+      },
+      {
+        "title": "t-SNE and UMAP (Visualization)",
+        "content": "Non-linear techniques used primarily for **data visualization**. Covers **t-SNE (t-distributed Stochastic Neighbor Embedding)** and **UMAP (Uniform Manifold Approximation and Projection)**, which map high-dimensional data into 2D or 3D while preserving local structure (cluster separation).",
+        "codeExample": "/* t-SNE Visualization Goal */\n# Used to visually verify if clusters found by other algorithms are distinct."
+      },
+      {
+        "title": "Hierarchical Clustering",
+        "content": "A method that builds a hierarchy of clusters. Covers **Hierarchical Clustering** (Agglomerative/Divisive) and the resulting **Dendrogram**—a tree diagram showing the arrangement of clusters. Useful when the number of clusters ($k$) is not known beforehand.",
+        "codeExample": "/* Hierarchical Clustering Output */\n# Output is typically a linkage matrix, visualized as a dendrogram."
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Model Evaluation, Metrics, and Validation ✅",
+    "icon": "Code",
+    "subsections": [
+      {
+        "title": "Classification Metrics (Accuracy, Precision, Recall, F1)",
+        "content": "Mastering the metrics for classification performance. Covers **Accuracy** (overall correctness), **Precision** (true positives out of all predicted positives), **Recall/Sensitivity** (true positives out of all actual positives), and **F1-Score** (harmonic mean of Precision and Recall).",
+        "codeExample": "/* Scikit-learn Metrics */\nfrom sklearn.metrics import precision_score, recall_score, f1_score\n# precision = precision_score(y_true, y_pred)"
+      },
+      {
+        "title": "The Confusion Matrix",
+        "content": "A table summarizing prediction results. Covers the **Confusion Matrix**, which details **True Positives (TP), True Negatives (TN), False Positives (FP)** (Type I error), and **False Negatives (FN)** (Type II error). Essential for understanding where the model fails.",
+        "codeExample": "/* Confusion Matrix Structure */\n# Actual/Predicted:\n#     | Positive | Negative\n# ----|----------|----------\n# Pos |    TP    |    FN\n# Neg |    FP    |    TN"
+      },
+      {
+        "title": "ROC Curve and AUC",
+        "content": "Evaluating classifier performance at various thresholds. Covers the **ROC (Receiver Operating Characteristic) Curve** (plots True Positive Rate vs. False Positive Rate). Defines the **AUC (Area Under the Curve)** as a single metric summarizing the overall ability of the model to distinguish between classes.",
+        "codeExample": "/* AUC Interpretation */\n# AUC = 0.5: Random guess (worst)\n# AUC = 1.0: Perfect model (best)"
+      },
+      {
+        "title": "Regression Metrics (MSE, RMSE, R²)",
+        "content": "Mastering the metrics for continuous prediction. Covers **Mean Squared Error (MSE)**, **Root Mean Squared Error (RMSE)** (units match the target variable), and the **R-squared ($R^2$) score** (proportion of variance explained by the model).",
+        "codeExample": "/* Regression Metrics in Scikit-learn */\nfrom sklearn.metrics import mean_squared_error, r2_score\n# mse = mean_squared_error(y_true, y_pred)"
+      },
+      {
+        "title": "Cross-Validation (k-Fold, Stratified)",
+        "content": "Ensuring model robustness. Covers **k-Fold Cross-Validation**, which partitions the data into $k$ folds, trains on $k-1$ folds, and validates on the remaining fold, averaging the results. Explains **Stratified k-Fold** for maintaining class balance in classification tasks.",
+        "codeExample": "/* k-Fold Process */\n# 1. Split data into k parts.\n# 2. Loop k times: Train on k-1, Test on 1.\n# 3. Average the k test scores."
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Deep Learning Fundamentals and Neural Networks 🧠",
+    "icon": "Code",
+    "subsections": [
+      {
+        "title": "The Neuron and Activation Functions",
+        "content": "The basic unit of a neural network. Covers the **Artificial Neuron** (node), which takes weighted inputs, sums them, and passes the result through a non-linear **Activation Function** (e.g., Sigmoid, ReLU, Tanh). Explains the necessity of non-linearity for solving complex, non-linear problems.",
+        "codeExample": "/* ReLU Activation */\n# Rectified Linear Unit:\n# f(x) = max(0, x)"
+      },
+      {
+        "title": "Feedforward Networks (MLP)",
+        "content": "Covers **Multilayer Perceptrons (MLP)**, the standard structure of fully connected layers where information flows only in one direction (input $\rightarrow$ hidden $\rightarrow$ output). Essential for basic classification and regression tasks.",
+        "codeExample": "/* Keras Dense Layer */\n# Sequential model with a dense hidden layer\nmodel.add(Dense(units=64, activation='relu', input_shape=(10,)))"
+      },
+      {
+        "title": "Forward and Backpropagation",
+        "content": "The two phases of training. Covers **Forward Propagation** (calculating the output and the loss). Details **Backpropagation** (using the Chain Rule to calculate gradients and update weights) to minimize the loss.",
+        "codeExample": "/* Backpropagation Goal */\n# Compute dL/dW for all weights W in the network."
+      },
+      {
+        "title": "Loss Functions (Cross-Entropy, MSE)",
+        "content": "Measuring error. Covers **Cross-Entropy Loss** (for classification, measures difference between predicted probability and true probability) and **Mean Squared Error (MSE)** (for regression).",
+        "codeExample": "/* PyTorch CrossEntropyLoss */\n# loss_fn = nn.CrossEntropyLoss()\n# loss = loss_fn(output, target)"
+      },
+      {
+        "title": "Batch Size, Epochs, and Iterations",
+        "content": "Training terminology. Covers **Batch Size** (number of samples processed before a weight update). **Epoch** (one full pass over the entire training dataset). **Iteration** (one batch pass). Explains the impact of batch size on training stability and memory consumption.",
+        "codeExample": "/* Training Loop Parameters */\n# 1 Epoch = (Total Samples / Batch Size) Iterations"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "title": "PyTorch/TensorFlow: Core Tensors and Graphs 💻",
+    "icon": "Code",
+    "subsections": [
+      {
+        "title": "Tensors: Data Structure and Manipulation",
+        "content": "The core data structure. Covers **Tensors** (multi-dimensional arrays) in **PyTorch** and **TensorFlow**. Details essential operations: reshaping (`.view()`), slicing, and device placement (`.to('cuda')`).",
+        "codeExample": "/* PyTorch Tensor Operations */\nimport torch\nx = torch.randn(2, 3)\n# Reshape operation\ny = x.view(3, 2)"
+      },
+      {
+        "title": "Automatic Differentiation (`autograd`/`GradientTape`)",
+        "content": "The core mechanism for training. Covers PyTorch's **`autograd`** and TensorFlow's **`GradientTape`**, which automatically record the operations performed on Tensors during the forward pass to compute gradients during the backward pass.",
+        "codeExample": "/* PyTorch Autograd */\nx = torch.tensor([1.0], requires_grad=True)\ny = x * 2\n# Backward pass computes gradients\ny.backward()\n# x.grad is now d(y)/d(x) = 2.0"
+      },
+      {
+        "title": "Static vs. Dynamic Computational Graphs",
+        "content": "Contrasting framework execution. Covers **PyTorch's Dynamic Graph** (defined during execution, flexible) vs. **TensorFlow's Eager/Static Graph** (defined before execution, optimized for deployment). Details TensorFlow's shift toward Eager Execution (Dynamic) for easier development.",
+        "codeExample": "/* Dynamic Graph Advantage */\n# PyTorch allows conditional logic (if statements) to be part of the forward pass easily."
+      },
+      {
+        "title": "Model Definition (Keras Functional/Sequential API)",
+        "content": "Structuring models in TensorFlow/Keras. Covers the simple **Sequential API** (layer-by-layer stacking) and the flexible **Functional API** (defining complex, multi-input/multi-output models).",
+        "codeExample": "/* Keras Functional API (Simple) */\nfrom tensorflow.keras.layers import Input, Dense\n\ninput_layer = Input(shape=(10,))\nhidden = Dense(64, activation='relu')(input_layer)\noutput = Dense(1, activation='sigmoid')(hidden)"
+      },
+      {
+        "title": "Data Loaders and Iterators",
+        "content": "Efficiently feeding data during training. Covers **Data Loaders** (PyTorch) and **`tf.data.Dataset`** (TensorFlow), which handle shuffling, batching, and parallel loading of data from disk to the GPU memory, preventing I/O bottlenecks.",
+        "codeExample": "/* PyTorch DataLoader */\nfrom torch.utils.data import DataLoader, TensorDataset\n\n# dataset = TensorDataset(X_tensor, y_tensor)\n# loader = DataLoader(dataset, batch_size=32, shuffle=True)"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "title": "CNNs: Computer Vision and Image Processing 🖼️",
+    "icon": "Code",
+    "subsections": [
+      {
+        "title": "Convolutional Layers and Feature Maps",
+        "content": "The core component of CNNs. Covers the **Convolutional Layer**, which applies a small **Filter/Kernel** to the input image, producing **Feature Maps**. Explains the role of shared weights in reducing the number of parameters.",
+        "codeExample": "/* Keras Conv2D Layer */\nmodel.add(Conv2D(filters=32, kernel_size=(3, 3), activation='relu', input_shape=(28, 28, 1)))"
+      },
+      {
+        "title": "Pooling Layers (Max/Average) and Downsampling",
+        "content": "Reducing spatial dimensions. Covers **Pooling Layers** (Max Pooling, Average Pooling), which downsample the feature maps, reducing computational cost and making the detection of features invariant to small shifts.",
+        "codeExample": "/* PyTorch MaxPool2D */\n# nn.MaxPool2d(kernel_size=2, stride=2)"
+      },
+      {
+        "title": "Architecture Patterns (LeNet, VGG, ResNet)",
+        "content": "Famous CNN architectures. Covers the structure of early CNNs (LeNet), deep CNNs (VGG), and networks using **Residual Connections (ResNet)**, which solve the vanishing gradient problem in very deep networks.",
+        "codeExample": "/* Conceptual Residual Block (ResNet) */\n# Output = F(x) + x"
+      },
+      {
+        "title": "Transfer Learning and Fine-Tuning",
+        "content": "A powerful technique for limited data. Covers **Transfer Learning**, where a model trained on a large dataset (e.g., ImageNet) is reused. Explains **Feature Extraction** (freezing early layers) and **Fine-Tuning** (unfreezing and retraining later layers).",
+        "codeExample": "/* Keras Freezing Layers */\n# base_model.trainable = False # Freeze weights"
+      },
+      {
+        "title": "Image Data Augmentation",
+        "content": "Techniques to artificially increase training data. Covers **Data Augmentation** (rotation, scaling, cropping, flipping) to improve model generalization and robustness to variations in input data.",
+        "codeExample": "/* Conceptual Augmentation Pipeline */\n# Original Image -> Rotated -> Flipped -> Cropped"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "title": "RNNs/Transformers: Sequence and NLP 💬",
+    "icon": "Code",
+    "subsections": [
+      {
+        "title": "Recurrent Neural Networks (RNNs) and Sequence Processing",
+        "content": "Processing sequential data (text, time series). Covers **RNNs**, which use a hidden state to maintain memory of previous inputs in the sequence. Explains the vanishing gradient problem in simple RNNs.",
+        "codeExample": "/* Conceptual RNN Forward Pass */\n# h_t = f(W_hh * h_{t-1} + W_xh * x_t + b)"
+      },
+      {
+        "title": "LSTMs and GRUs (Solving Vanishing Gradients)",
+        "content": "Advanced RNN architectures. Covers **LSTM (Long Short-Term Memory)** networks (using Forget, Input, Output gates) and **GRU (Gated Recurrent Unit)** (a simpler variant) that are designed to effectively capture long-range dependencies.",
+        "codeExample": "/* PyTorch LSTM Layer */\n# nn.LSTM(input_size, hidden_size)"
+      },
+      {
+        "title": "Word Embeddings (Word2Vec, BERT)",
+        "content": "Representing text numerically. Covers **Word Embeddings** (dense vector representations of words). Explains contextual embeddings (like **BERT**), where the vector representation of a word changes based on its context in the sentence.",
+        "codeExample": "/* Conceptual Embedding Layer */\n# Map integer token IDs to continuous vectors."
+      },
+      {
+        "title": "The Transformer Architecture and Attention",
+        "content": "The standard model for modern NLP/LLMs. Covers the **Transformer**, which replaces recurrence with the **Self-Attention Mechanism**. Explains that Attention allows the model to weigh the importance of different parts of the input sequence.",
+        "codeExample": "/* Attention Rationale */\n# The output for a word depends on the weighted sum of *all* input words."
+      },
+      {
+        "title": "Tokenization and Vocabulary",
+        "content": "The first step in NLP. Covers **Tokenization** (splitting text into discrete units/tokens) and creating a **Vocabulary** (mapping tokens to integer IDs). Details subword tokenization (BPE) for handling rare words.",
+        "codeExample": "/* Tokenization Example */\n# Sentence: \"The quick brown fox\"\n# Tokens: [The, quick, brown, fox]\n# IDs: [20, 150, 48, 92]"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "title": "Optimization Algorithms and Backpropagation 🚀",
+    "icon": "Code",
+    "subsections": [
+      {
+        "title": "Stochastic Gradient Descent (SGD)",
+        "content": "The basic optimizer. Covers **SGD**, which computes the gradient and updates weights using only a small **Mini-Batch** of training data. Explains the trade-off between speed (fast update) and variance (noisy updates).",
+        "codeExample": "/* SGD Update Rule */\n# W = W - η * ∇L_batch(W)"
+      },
+      {
+        "title": "Momentum and Acceleration",
+        "content": "Improving SGD. Covers **Momentum**, which adds a fraction of the past gradient update to the current update, helping the optimizer overcome local minima and accelerate convergence along shallow gradients.",
+        "codeExample": "/* Momentum Concept */\n# Analogous to a ball rolling down a hill (it gains momentum)."
+      },
+      {
+        "title": "Adaptive Learning Rate Algorithms (Adam, RMSprop)",
+        "content": "Modern optimizers. Covers **Adam (Adaptive Moment Estimation)** and **RMSprop**, which calculate adaptive learning rates for *each parameter individually* based on past gradient magnitudes. Adam is often the default choice due to its robustness.",
+        "codeExample": "/* Adam Optimization */\n# Uses estimates of both the first moment (mean) and the second moment (uncentered variance) of the gradients."
+      },
+      {
+        "title": "Learning Rate Scheduling and Decay",
+        "content": "Managing the learning rate ($\eta$). Covers **Learning Rate Decay** (gradually decreasing $\eta$ over time) and **Learning Rate Scheduling** (e.g., stepped or cyclical rates). Essential for finding the optimal minimum without oscillating wildly or getting stuck.",
+        "codeExample": "/* PyTorch Learning Rate Scheduler */\n# scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=30, gamma=0.1)"
+      },
+      {
+        "title": "The Full Backpropagation Algorithm",
+        "content": "A step-by-step review of backpropagation. Covers the four fundamental equations (error calculation, delta calculation, weight update) and the importance of using the derivative of the **Activation Function** during the backward pass.",
+        "codeExample": "/* Backpropagation Step (Conceptual) */\n# The gradient of the loss at layer L depends on the gradient at layer L+1."
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "title": "Regularization, Dropout, and Generalization 🔏",
+    "icon": "Code",
+    "subsections": [
+      {
+        "title": "Overfitting vs. Underfitting",
+        "content": "The central challenge. Covers **Overfitting** (model learns noise in training data, performs poorly on unseen data) vs. **Underfitting** (model is too simple, fails to capture underlying patterns). Regularization aims to mitigate overfitting.",
+        "codeExample": "/* Problem Identification */\n# Overfitting: Train Accuracy >> Test Accuracy\n# Underfitting: Train Accuracy is low"
+      },
+      {
+        "title": "L2 (Ridge) Regularization",
+        "content": "Adding a penalty to the loss function. Covers **L2 Regularization** (Ridge Regression), which adds the squared magnitude of weights ($\lambda \sum w_i^2$) to the loss. This encourages weights to be small, smoothing the decision boundary and reducing model complexity.",
+        "codeExample": "/* L2 Loss Function */\n# L_total = L_original + λ * ||W||²"
+      },
+      {
+        "title": "L1 (Lasso) Regularization",
+        "content": "Promoting model sparsity. Covers **L1 Regularization** (Lasso Regression), which adds the absolute magnitude of weights ($\lambda \sum |w_i|$) to the loss. This forces many weight coefficients to exactly zero, performing automatic **Feature Selection**.",
+        "codeExample": "/* L1 Loss Function */\n# L_total = L_original + λ * ||W||_1"
+      },
+      {
+        "title": "Dropout in Neural Networks",
+        "content": "A simple and powerful deep learning technique. Covers **Dropout**, where randomly selected neurons are temporarily ignored during a training step (e.g., 50% probability). This prevents neurons from co-adapting and forces the network to learn more robust, redundant representations.",
+        "codeExample": "/* Keras Dropout Layer */\n# Drops 50% of the inputs to the next layer\nmodel.add(Dropout(0.5))"
+      },
+      {
+        "title": "Early Stopping",
+        "content": "A simple technique to prevent overfitting. Covers **Early Stopping**, where the training process is halted when the model's performance on the **Validation Set** stops improving (or starts getting worse) for a fixed number of epochs (patience).",
+        "codeExample": "/* Keras Early Stopping Callback */\n# callback = EarlyStopping(monitor='val_loss', patience=10)"
+      }
+    ]
+  }
+]
+  },
+  ai_ml_2: {
+    id: 'ai_ml_2',
+    title: 'Artificial Intelligence and Machine Language : Part II',
+    icon: BrainCircuit,
+    color: '#d8d8d8',
+    description: 'Core Machine Learning Algorithms',
+    units: [
+  {
+    "id": 13,
+    "title": "Linear Regression and Optimization 📉",
+    "icon": "Code",
+    "subsections": [
+      {
+        "title": "Simple and Multiple Linear Regression",
+        "content": "Covers **Linear Regression** for predicting a **continuous target variable** ($y$) based on one or more independent variables ($x$). The model assumes a linear relationship: $y = w_0 + w_1x_1 + w_2x_2 + \dots$. Details the interpretation of coefficients ($w_i$).",
+        "codeExample": "/* Scikit-learn Linear Regression */\nfrom sklearn.linear_model import LinearRegression\n\nmodel = LinearRegression()\nmodel.fit(X_train, y_train)\nprint(model.coef_)"
+      },
+      {
+        "title": "The Cost Function (MSE)",
+        "content": "Mastering the **Cost Function** for regression, typically **Mean Squared Error (MSE)** ($L = \frac{1}{N} \sum(y_i - \hat{y}_i)^2$). The goal of training is to find the parameters ($\mathbf{w}$) that minimize this function.",
+        "codeExample": "/* Conceptual MSE Calculation */\n# L = (1/N) * SUM((Actual - Predicted)^2)"
+      },
+      {
+        "title": "Gradient Descent (GD) for Regression",
+        "content": "Using **Gradient Descent (GD)** to iteratively adjust model parameters. Covers how GD calculates the gradient of the MSE function with respect to weights and takes steps proportional to the **Learning Rate** ($\eta$) in the negative gradient direction.",
+        "codeExample": "/* Gradient Descent Update Rule */\n# w_new = w_old - η * (∂L / ∂w)"
+      },
+      {
+        "title": "Normal Equation (Closed-Form Solution)",
+        "content": "An analytical solution for **Linear Regression** that finds the optimal weights directly without iteration: $\mathbf{w} = (X^T X)^{-1} X^T y$. Explains that this is computationally expensive for large datasets due to matrix inversion but requires no learning rate tuning.",
+        "codeExample": "/* Normal Equation Rationale */\n# (X.T @ X)^-1 @ X.T @ y"
+      },
+      {
+        "title": "Polynomial Regression and Feature Transformation",
+        "content": "Extending the model for non-linear relationships. Covers **Polynomial Regression**, which is still linear in terms of coefficients but non-linear in features (e.g., $y = w_0 + w_1x + w_2x^2$). Implemented by adding polynomial features before training.",
+        "codeExample": "/* Polynomial Features in Scikit-learn */\nfrom sklearn.preprocessing import PolynomialFeatures\npoly = PolynomialFeatures(degree=2)\nX_poly = poly.fit_transform(X)"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "title": "Logistic Regression and Classification 🎯",
+    "icon": "Code",
+    "subsections": [
+      {
+        "title": "The Sigmoid Function and Probability Output",
+        "content": "The core transformation for classification. Covers the **Sigmoid (or Logistic) Function** ($\sigma(z) = \frac{1}{1+e^{-z}}$), which squashes the output of a linear model into a probability value between 0 and 1, used for binary classification.",
+        "codeExample": "/* Sigmoid Function Output */\n# If z = 0, σ(z) = 0.5 (Boundary)\n# If z > 0, σ(z) > 0.5 (Class 1)\n# If z < 0, σ(z) < 0.5 (Class 0)"
+      },
+      {
+        "title": "Cross-Entropy Loss (Log Loss)",
+        "content": "The standard cost function for classification. Covers **Cross-Entropy Loss** ($L = -\frac{1}{N} \sum [y_i \log(\hat{y}_i) + (1-y_i) \log(1-\hat{y}_i)]$), which severely penalizes highly confident but incorrect predictions, guiding the model towards accurate probabilities.",
+        "codeExample": "/* Cross-Entropy Rationale */\n# If True Class (y) = 1, Loss = -log(ŷ). If ŷ is near 0, Loss -> ∞."
+      },
+      {
+        "title": "Decision Boundary",
+        "content": "Defining the separation surface. Covers the **Decision Boundary**—the surface in the feature space where the model's predicted probability equals 0.5 (the classification threshold). It is a straight line or plane in basic linear models.",
+        "codeExample": "/* Decision Boundary (Conceptual) */\n# The set of points where w^T * x + b = 0"
+      },
+      {
+        "title": "Multi-Class Classification (One-vs-Rest)",
+        "content": "Extending binary classification to multiple classes. Covers the **One-vs-Rest (OvR)** strategy, where a separate binary classifier is trained for each class, treating that class as positive and all others as negative. The final prediction is the class with the highest probability.",
+        "codeExample": "/* OvR Strategy */\n# For 3 classes (A, B, C), train 3 models:\n# 1. Class A vs (B and C)\n# 2. Class B vs (A and C)\n# 3. Class C vs (A and B)"
+      },
+      {
+        "title": "Feature Scaling for Logistic Regression",
+        "content": "Preprocessing for optimization stability. Covers the importance of **Feature Scaling (Standardization or Normalization)** in Logistic Regression to prevent features with large scales from dominating the cost function and to ensure the optimization converges faster.",
+        "codeExample": "/* Feature Scaling (Z-Score) */\nfrom sklearn.preprocessing import StandardScaler\n# X_scaled = (X - μ) / σ"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "title": "Decision Trees and Ensemble Methods 🌳",
+    "icon": "Code",
+    "subsections": [
+      {
+        "title": "Decision Trees: Structure and Splitting",
+        "content": "A simple, interpretable non-linear model. Covers **Decision Trees** (tree-like structures used for both classification and regression). The tree is built by recursively finding the **best feature to split** the data based on purity criteria.",
+        "codeExample": "/* Decision Tree Process */\n# Start at Root Node -> Ask Question (Feature Split) -> Follow Branch -> Leaf Node (Prediction)"
+      },
+      {
+        "title": "Purity Measures (Gini Impurity and Entropy)",
+        "content": "Criteria for finding the best split. Covers **Gini Impurity** and **Entropy/Information Gain**, measures used to evaluate how well a split separates data points of different classes. The split that maximizes **Information Gain** is chosen.",
+        "codeExample": "/* Gini Impurity (Conceptual) */\n# Gini(p) = 1 - Σ(p_i)²"
+      },
+      {
+        "title": "Ensemble Learning Rationale",
+        "content": "Combining multiple models. Covers **Ensemble Learning**, the technique of training multiple base models (weak learners) and aggregating their predictions (voting/averaging) to achieve higher accuracy and robustness than any single model.",
+        "codeExample": "/* Ensemble Prediction */\n# Classification: Majority Vote\n# Regression: Average of predictions"
+      },
+      {
+        "title": "Random Forest (Bagging)",
+        "content": "A powerful parallel ensemble method. Covers **Random Forest**, which uses **Bagging (Bootstrap Aggregating)**: training multiple Decision Trees on different random subsets of the training data and different random subsets of features. This reduces variance and overfitting.",
+        "codeExample": "/* Random Forest in Scikit-learn */\nfrom sklearn.ensemble import RandomForestClassifier\n# model = RandomForestClassifier(n_estimators=100, max_depth=10)"
+      },
+      {
+        "title": "Gradient Boosting (Boosting)",
+        "content": "A sequential ensemble method. Covers **Gradient Boosting** (e.g., XGBoost, LightGBM), where trees are built sequentially, with each new tree correcting the errors (residuals) of the previous tree. This minimizes bias and often achieves state-of-the-art performance on tabular data.",
+        "codeExample": "/* Gradient Boosting Rationale */\n# New_Model = Current_Ensemble + Learning_Rate * New_Tree(Residuals)"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "title": "Support Vector Machines (SVM) 📐",
+    "icon": "Code",
+    "subsections": [
+      {
+        "title": "Hyperplanes and Margin Maximization",
+        "content": "The geometric core of SVM. Covers the **Hyperplane** (the decision boundary) and the goal of **Margin Maximization**—finding the hyperplane that achieves the greatest separation distance to the nearest training data points (the **Support Vectors**).",
+        "codeExample": "/* Support Vectors */\n# The training instances closest to the hyperplane; only these affect the decision boundary."
+      },
+      {
+        "title": "The Kernel Trick (Non-Linearity)",
+        "content": "Extending SVM to complex data. Covers the **Kernel Trick**, which uses a mathematical function (**Kernel**, e.g., Radial Basis Function or RBF) to implicitly map the input data into a high-dimensional feature space, allowing the use of a linear classifier to solve a non-linear problem.",
+        "codeExample": "/* Scikit-learn SVM Kernel */\nfrom sklearn.svm import SVC\n# model = SVC(kernel='rbf', C=1.0)"
+      },
+      {
+        "title": "Soft Margin Classification",
+        "content": "Handling real-world noisy data. Covers **Soft Margin Classification**, which allows some training instances to violate the margin (or even cross the hyperplane) by introducing a **Slack Variable** and a **Regularization Parameter ($C$)**. This prevents overfitting and makes the model robust to outliers.",
+        "codeExample": "/* Parameter C */\n# High C: Strict model, low bias, high variance.\n# Low C: Flexible model, high bias, low variance."
+      },
+      {
+        "title": "SVM for Regression (SVR)",
+        "content": "Adapting SVM for continuous prediction. Covers **Support Vector Regression (SVR)**, which finds a function that deviates from the true targets by no more than a tolerance value ($\epsilon$) while still remaining as flat as possible (regularization).",
+        "codeExample": "/* SVR in Scikit-learn */\nfrom sklearn.svm import SVR\n# model = SVR(kernel='linear')"
+      },
+      {
+        "title": "Computational Complexity",
+        "content": "Analyzing resource constraints. Covers the high computational cost of SVM training (often scaling between $O(N^2)$ and $O(N^3)$ with the number of training instances $N$), making it generally unsuitable for very large datasets.",
+        "codeExample": "/* Computational Note */\n# SVM is powerful on medium-sized datasets but struggles with Big Data."
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "title": "k-Nearest Neighbors (k-NN) 🧑‍🤝‍🧑",
+    "icon": "Code",
+    "subsections": [
+      {
+        "title": "k-NN Classification and Distance Metrics",
+        "content": "A non-parametric, instance-based model. Covers **k-NN** where a test instance is classified based on the majority class among its **k** closest neighbors in the training set. Details using distance metrics like **Euclidean Distance** (L2) and **Manhattan Distance** (L1).",
+        "codeExample": "/* k-NN in Scikit-learn */\nfrom sklearn.neighbors import KNeighborsClassifier\n# model = KNeighborsClassifier(n_neighbors=5, metric='euclidean')"
+      },
+      {
+        "title": "Curse of Dimensionality",
+        "content": "The central challenge for k-NN. Covers the **Curse of Dimensionality**, where distance metrics become less meaningful and the required sample size for accurate prediction grows exponentially as the number of features increases. **Dimensionality Reduction (PCA)** is crucial for k-NN.",
+        "codeExample": "/* Curse of Dimensionality Effect */\n# In high dimensions, all data points tend to be equidistant from each other."
+      },
+      {
+        "title": "Weighted k-NN",
+        "content": "Improving accuracy by emphasizing close neighbors. Covers **Weighted k-NN**, where the contribution of each neighbor to the majority vote is weighted inversely proportional to its distance from the test instance (closer neighbors have a greater influence).",
+        "codeExample": "/* Weighted k-NN Parameter */\n# model = KNeighborsClassifier(n_neighbors=5, weights='distance')"
+      },
+      {
+        "title": "Choice of k and Model Complexity",
+        "content": "Tuning the neighborhood size. Covers the impact of the hyperparameter **$k$**: a **small $k$** leads to a complex model (low bias, high variance/overfitting), while a **large $k$** leads to a simpler model (high bias, underfitting).",
+        "codeExample": "/* Hyperparameter Tuning */\n# Optimal k is typically found using cross-validation."
+      },
+      {
+        "title": "Computational Cost",
+        "content": "Analyzing memory and speed. Covers the high **memory cost** (requires storing the entire training dataset) and high **prediction time** (requires calculating the distance to all $N$ training points for every test instance) of k-NN.",
+        "codeExample": "/* Computational Note */\n# k-NN is a lazy learner: most work is done during prediction, not training."
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "title": "Unsupervised Learning: k-Means and Clustering 🧩",
+    "icon": "Code",
+    "subsections": [
+      {
+        "title": "k-Means Clustering Algorithm",
+        "content": "The basic partitioning method. Covers **k-Means Clustering**, which groups data points into $k$ clusters by iteratively assigning points to the closest cluster **centroid** and updating the centroids to the mean of their assigned points.",
+        "codeExample": "/* k-Means in Scikit-learn */\nfrom sklearn.cluster import KMeans\n# model = KMeans(n_clusters=4, init='k-means++', random_state=0)\n# model.fit(X)"
+      },
+      {
+        "title": "Choosing k (Elbow Method and Silhouette Score)",
+        "content": "Determining the optimal number of clusters. Covers the **Elbow Method** (plotting the sum of squared distances vs. $k$ and choosing the $k$ where the curve bends) and the **Silhouette Score** (measuring how similar an object is to its own cluster compared to others).",
+        "codeExample": "/* Elbow Method Goal */\n# Find the point of diminishing returns for cluster tightness (Inertia)."
+      },
+      {
+        "title": "DBSCAN (Density-Based Clustering)",
+        "content": "An algorithm for finding arbitrary cluster shapes. Covers **DBSCAN**, which groups together points based on proximity (parameter $\epsilon$) and minimum neighborhood size (parameter $MinPts$), effectively identifying **noise/outliers** that do not belong to any cluster.",
+        "codeExample": "/* DBSCAN in Scikit-learn */\nfrom sklearn.cluster import DBSCAN\n# model = DBSCAN(eps=0.5, min_samples=5)"
+      },
+      {
+        "title": "Cluster Evaluation (Internal Metrics)",
+        "content": "Assessing the quality of clustering results *without* ground truth labels. Covers **Internal Metrics** such as the **Davies-Bouldin Index** (lower is better, measuring average similarity between clusters) and the **Calinski-Harabasz Index** (higher is better, measuring variance ratio).",
+        "codeExample": "/* Conceptual Internal Metrics */\n# Evaluate: Cluster tightness (cohesion) and separation (dissimilarity)."
+      },
+      {
+        "title": "Gaussian Mixture Models (GMM)",
+        "content": "A probabilistic clustering approach. Covers **GMM**, which models the data distribution as a mixture of several Gaussian distributions, assigning probabilities that each data point belongs to each cluster. Uses the **Expectation-Maximization (EM)** algorithm for parameter estimation.",
+        "codeExample": "/* GMM in Scikit-learn */\nfrom sklearn.mixture import GaussianMixture\n# model = GaussianMixture(n_components=3)"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "title": "Dimensionality Reduction (PCA & t-SNE) ⬇️",
+    "icon": "Code",
+    "subsections": [
+      {
+        "title": "Principal Component Analysis (PCA)",
+        "content": "A linear, statistical method. Covers **PCA**, which identifies the directions (**Principal Components**) that contain the largest variance in the dataset. Used to project the data onto a lower-dimensional subspace while minimizing information loss.",
+        "codeExample": "/* PCA in Scikit-learn */\nfrom sklearn.decomposition import PCA\n# model = PCA(n_components=0.95) # Keep 95% of variance\n# X_reduced = model.fit_transform(X)"
+      },
+      {
+        "title": "Explained Variance Ratio",
+        "content": "Assessing the quality of the reduction. Covers the **Explained Variance Ratio**, which measures the proportion of the dataset's variance that lies along each principal component. Used to determine the optimal number of dimensions to retain.",
+        "codeExample": "/* Explained Variance Rationale */\n# Sum of variances of all components equals the total variance of the original data."
+      },
+      {
+        "title": "t-SNE for Visualization",
+        "content": "A non-linear, non-deterministic technique. Covers **t-SNE (t-distributed Stochastic Neighbor Embedding)**, which minimizes the difference between local relationships in the high-dimensional space and the low-dimensional map. **NOTE:** Used only for visualization, as its non-deterministic output is unsuitable for feature transformation.",
+        "codeExample": "/* t-SNE Usage Note */\n# Results from t-SNE runs can look different due to randomness."
+      },
+      {
+        "title": "UMAP for Faster Visualization",
+        "content": "A modern, faster alternative to t-SNE. Covers **UMAP (Uniform Manifold Approximation and Projection)**, which is generally quicker to compute and better preserves the global structure of the data than t-SNE, making it the preferred method for large dataset visualization.",
+        "codeExample": "/* UMAP Advantage */\n# UMAP provides a better balance between preserving local and global structure."
+      },
+      {
+        "title": "Feature Selection vs. Feature Extraction",
+        "content": "Distinguishing reduction methods. Covers **Feature Selection** (choosing a subset of original features, e.g., Filter/Wrapper methods) vs. **Feature Extraction** (creating new, lower-dimensional features from the original set, e.g., PCA/t-SNE).",
+        "codeExample": "/* Distinction */\n# Selection: [Age, Income, City] -> [Income, City]\n# Extraction: [Age, Income, City] -> [Principal Component 1, Principal Component 2]"
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "title": "Model Evaluation, Metrics, and Validation ✅",
+    "icon": "Code",
+    "subsections": [
+      {
+        "title": "Classification Metrics (Precision, Recall, F1)",
+        "content": "Mastering the metrics for classification performance. Covers **Precision** (TP / (TP + FP)), **Recall** (TP / (TP + FN)), and **F1-Score** (harmonic mean of Precision and Recall). The choice of metric depends on the cost of false positives (FP) vs. false negatives (FN).",
+        "codeExample": "/* Metric Choice Rationale */\n# High cost of FP (spam detection) -> Optimize for Precision.\n# High cost of FN (disease detection) -> Optimize for Recall."
+      },
+      {
+        "title": "The Confusion Matrix",
+        "content": "A table summarizing prediction results. Covers the **Confusion Matrix**, which details **True Positives (TP), True Negatives (TN), False Positives (FP)** (Type I error), and **False Negatives (FN)** (Type II error). Essential for understanding where the model fails.",
+        "codeExample": "/* Confusion Matrix Structure */\n# Actual/Predicted:\n#     | Positive | Negative\n# ----|----------|----------\n# Pos |    TP    |    FN\n# Neg |    FP    |    TN"
+      },
+      {
+        "title": "ROC Curve and AUC",
+        "content": "Evaluating classifier performance at various thresholds. Covers the **ROC (Receiver Operating Characteristic) Curve** (plots True Positive Rate vs. False Positive Rate). Defines the **AUC (Area Under the Curve)** as a single metric summarizing the overall ability of the model to distinguish between classes.",
+        "codeExample": "/* AUC Interpretation */\n# AUC = 0.5: Random guess (worst)\n# AUC = 1.0: Perfect model (best)"
+      },
+      {
+        "title": "Regression Metrics (MSE, RMSE, R²)",
+        "content": "Mastering the metrics for continuous prediction. Covers **Mean Squared Error (MSE)**, **Root Mean Squared Error (RMSE)** (units match the target variable), and the **R-squared ($R^2$) score** (proportion of variance explained by the model).",
+        "codeExample": "/* Regression Metrics in Scikit-learn */\nfrom sklearn.metrics import mean_squared_error, r2_score\n# mse = mean_squared_error(y_true, y_pred)"
+      },
+      {
+        "title": "Log Loss (Cross-Entropy) for Probabilities",
+        "content": "A loss function used as a metric. Covers **Log Loss** (or cross-entropy) as a metric, which measures the performance of a classifier where the prediction is a probability value between 0 and 1. Punishes false classifications severely.",
+        "codeExample": "/* Log Loss Rationale */\n# Punishes highly confident incorrect predictions."
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "title": "Cross-Validation and Resampling Techniques 🔄",
+    "icon": "Code",
+    "subsections": [
+      {
+        "title": "k-Fold Cross-Validation",
+        "content": "The standard validation method. Covers **k-Fold Cross-Validation**, which partitions the data into $k$ folds, trains on $k-1$ folds, and validates on the remaining fold, averaging the results. This minimizes dependence on a single train-test split.",
+        "codeExample": "/* Scikit-learn KFold */\nfrom sklearn.model_selection import KFold\n# cv = KFold(n_splits=5, shuffle=True)"
+      },
+      {
+        "title": "Stratified k-Fold",
+        "content": "Preserving class balance. Covers **Stratified k-Fold**, which ensures that each fold maintains the same ratio of target classes as the original dataset. **Crucial** for classification tasks, especially with imbalanced data.",
+        "codeExample": "/* Scikit-learn Stratified KFold */\nfrom sklearn.model_selection import StratifiedKFold\n# cv = StratifiedKFold(n_splits=5, shuffle=True)"
+      },
+      {
+        "title": "Leave-One-Out Cross-Validation (LOOCV)",
+        "content": "An extreme form of cross-validation. Covers **LOOCV**, where $k$ equals $N$ (the number of data points), training on $N-1$ samples and testing on the one remaining sample. Provides a nearly unbiased estimate but is computationally prohibitive for large datasets.",
+        "codeExample": "/* LOOCV Rationale */\n# Computationally expensive but maximizes training data utilization."
+      },
+      {
+        "title": "Bootstrapping and Resampling",
+        "content": "Creating synthetic datasets. Covers **Bootstrapping**, the technique of resampling the training data *with replacement* to create multiple synthetic training sets. Used in **Bagging** (Bootstrap Aggregating) ensemble methods like Random Forest.",
+        "codeExample": "/* Bootstrapping Rationale */\n# Creating multiple slightly different views of the data."
+      },
+      {
+        "title": "Train, Validation, and Test Sets",
+        "content": "The canonical data split. Covers the three distinct sets: **Training Set** (used to fit parameters), **Validation Set** (used to tune hyperparameters), and **Test Set** (used once for final, unbiased model evaluation). **NOTE:** The Test Set should never influence model development.",
+        "codeExample": "/* Data Split Rationale */\n# Train: 70%, Validation: 15%, Test: 15%"
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "title": "Bias-Variance Tradeoff and Model Complexity ⚖️",
+    "icon": "Code",
+    "subsections": [
+      {
+        "title": "Bias-Variance Tradeoff Definition",
+        "content": "The central conceptual conflict in model selection. Covers the **Bias-Variance Tradeoff**: **Bias** (error from overly simplified assumptions) vs. **Variance** (error from sensitivity to small fluctuations in training data). The goal is to find the sweet spot between the two.",
+        "codeExample": "/* Tradeoff Summary */\n# High Bias (Underfit): Simple model (e.g., Linear Regression on complex data).\n# High Variance (Overfit): Complex model (e.g., Deep Decision Tree)."
+      },
+      {
+        "title": "Underfitting and High Bias",
+        "content": "Identifying the error state. Covers **Underfitting**, where the model is too simplistic to capture the underlying pattern (High Bias). **Remedies** include adding features, reducing regularization, or using a more complex model (e.g., Polynomial Regression).",
+        "codeExample": "/* High Bias Indication */\n# Train Error is High AND Test Error is High."
+      },
+      {
+        "title": "Overfitting and High Variance",
+        "content": "Identifying the error state. Covers **Overfitting**, where the model captures noise in the training data (High Variance). **Remedies** include adding more training data, using regularization (L1/L2), reducing model complexity, or using cross-validation.",
+        "codeExample": "/* High Variance Indication */\n# Train Error is Low BUT Test Error is High."
+      },
+      {
+        "title": "Model Complexity Curve",
+        "content": "Visually assessing the tradeoff. Covers the **Model Complexity Curve**, which plots training error and validation error as a function of model complexity (e.g., polynomial degree or number of tree nodes). The ideal model complexity minimizes the validation error.",
+        "codeExample": "/* Optimal Complexity */\n# The point where the validation error starts to increase (just before overfitting begins)."
+      },
+      {
+        "title": "Regularization as a Bias-Variance Knob",
+        "content": "Using regularization to manage complexity. Covers the **Regularization Strength ($\lambda$ or $C$)** as a hyperparameter that acts as a knob for the tradeoff: **increasing $\lambda$ increases bias** (smoother, simpler model), and **decreasing $\lambda$ increases variance** (more complex model).",
+        "codeExample": "/* Regularization Effect */\n# High λ: Ridge Regression weights approach zero (High Bias).\n# Low λ: Weights are unconstrained (High Variance)."
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "title": "Deep Learning Fundamentals and Neural Networks 🧠",
+    "icon": "Code",
+    "subsections": [
+      {
+        "title": "The Neuron and Activation Functions",
+        "content": "The basic unit of a neural network. Covers the **Artificial Neuron** (node), which takes weighted inputs, sums them, and passes the result through a non-linear **Activation Function** (e.g., Sigmoid, ReLU, Tanh). Explains the necessity of non-linearity for solving complex, non-linear problems.",
+        "codeExample": "/* ReLU Activation */\n# Rectified Linear Unit:\n# f(x) = max(0, x)"
+      },
+      {
+        "title": "Feedforward Networks (MLP)",
+        "content": "Covers **Multilayer Perceptrons (MLP)**, the standard structure of fully connected layers where information flows only in one direction (input $\rightarrow$ hidden $\rightarrow$ output). Essential for basic classification and regression tasks.",
+        "codeExample": "/* Keras Dense Layer */\n# Sequential model with a dense hidden layer\nmodel.add(Dense(units=64, activation='relu', input_shape=(10,)))"
+      },
+      {
+        "title": "Forward and Backpropagation",
+        "content": "The two phases of training. Covers **Forward Propagation** (calculating the output and the loss). Details **Backpropagation** (using the Chain Rule to calculate gradients and update weights) to minimize the loss.",
+        "codeExample": "/* Backpropagation Goal */\n# Compute dL/dW for all weights W in the network."
+      },
+      {
+        "title": "Loss Functions (Cross-Entropy, MSE)",
+        "content": "Measuring error. Covers **Cross-Entropy Loss** (for classification, measures difference between predicted probability and true probability) and **Mean Squared Error (MSE)** (for regression).",
+        "codeExample": "/* PyTorch CrossEntropyLoss */\n# loss_fn = nn.CrossEntropyLoss()\n# loss = loss_fn(output, target)"
+      },
+      {
+        "title": "Batch Size, Epochs, and Iterations",
+        "content": "Training terminology. Covers **Batch Size** (number of samples processed before a weight update). **Epoch** (one full pass over the entire training dataset). **Iteration** (one batch pass). Explains the impact of batch size on training stability and memory consumption.",
+        "codeExample": "/* Training Loop Parameters */\n# 1 Epoch = (Total Samples / Batch Size) Iterations"
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "title": "PyTorch/TensorFlow: Tensors and Graphs 💻",
+    "icon": "Code",
+    "subsections": [
+      {
+        "title": "Tensors: Data Structure and Manipulation",
+        "content": "The core data structure. Covers **Tensors** (multi-dimensional arrays) in **PyTorch** and **TensorFlow**. Details essential operations: reshaping (`.view()`), slicing, and device placement (`.to('cuda')`).",
+        "codeExample": "/* PyTorch Tensor Operations */\nimport torch\nx = torch.randn(2, 3)\n# Reshape operation\ny = x.view(3, 2)"
+      },
+      {
+        "title": "Automatic Differentiation (`autograd`/`GradientTape`)",
+        "content": "The core mechanism for training. Covers PyTorch's **`autograd`** and TensorFlow's **`GradientTape`**, which automatically record the operations performed on Tensors during the forward pass to compute gradients during the backward pass.",
+        "codeExample": "/* PyTorch Autograd */\nx = torch.tensor([1.0], requires_grad=True)\ny = x * 2\n# Backward pass computes gradients\ny.backward()\n# x.grad is now d(y)/d(x) = 2.0"
+      },
+      {
+        "title": "Static vs. Dynamic Computational Graphs",
+        "content": "Contrasting framework execution. Covers **PyTorch's Dynamic Graph** (defined during execution, flexible) vs. **TensorFlow's Eager/Static Graph** (defined before execution, optimized for deployment). Details TensorFlow's shift toward Eager Execution (Dynamic) for easier development.",
+        "codeExample": "/* Dynamic Graph Advantage */\n# PyTorch allows conditional logic (if statements) to be part of the forward pass easily."
+      },
+      {
+        "title": "Model Definition (Keras Functional/Sequential API)",
+        "content": "Structuring models in TensorFlow/Keras. Covers the simple **Sequential API** (layer-by-layer stacking) and the flexible **Functional API** (defining complex, multi-input/multi-output models).",
+        "codeExample": "/* Keras Functional API (Simple) */\nfrom tensorflow.keras.layers import Input, Dense\n\ninput_layer = Input(shape=(10,))\nhidden = Dense(64, activation='relu')(input_layer)\noutput = Dense(1, activation='sigmoid')(hidden)"
+      },
+      {
+        "title": "Data Loaders and Iterators",
+        "content": "Efficiently feeding data during training. Covers **Data Loaders** (PyTorch) and **`tf.data.Dataset`** (TensorFlow), which handle shuffling, batching, and parallel loading of data from disk to the GPU memory, preventing I/O bottlenecks.",
+        "codeExample": "/* PyTorch DataLoader */\nfrom torch.utils.data import DataLoader, TensorDataset\n\n# dataset = TensorDataset(X_tensor, y_tensor)\n# loader = DataLoader(dataset, batch_size=32, shuffle=True)"
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "title": "Optimization (SGD, Adam, Learning Rate) 🚀",
+    "icon": "Code",
+    "subsections": [
+      {
+        "title": "Stochastic Gradient Descent (SGD)",
+        "content": "The basic optimizer. Covers **SGD**, which computes the gradient and updates weights using only a small **Mini-Batch** of training data. Explains the trade-off between speed (fast update) and variance (noisy updates).",
+        "codeExample": "/* SGD Update Rule */\n# W_new = W_old - η * ∇L_batch(W)"
+      },
+      {
+        "title": "Momentum and Acceleration",
+        "content": "Improving SGD. Covers **Momentum**, which adds a fraction of the past gradient update to the current update, helping the optimizer overcome local minima and accelerate convergence along shallow gradients.",
+        "codeExample": "/* Momentum Concept */\n# Analogous to a ball rolling down a hill (it gains momentum)."
+      },
+      {
+        "title": "Adaptive Learning Rate Algorithms (Adam, RMSprop)",
+        "content": "Modern optimizers. Covers **Adam (Adaptive Moment Estimation)** and **RMSprop**, which calculate adaptive learning rates for *each parameter individually* based on past gradient magnitudes. Adam is often the default choice due to its robustness.",
+        "codeExample": "/* Adam Optimization */\n# Uses estimates of both the first moment (mean) and the second moment (uncentered variance) of the gradients."
+      },
+      {
+        "title": "Learning Rate Scheduling and Decay",
+        "content": "Managing the learning rate ($\eta$). Covers **Learning Rate Decay** (gradually decreasing $\eta$ over time) and **Learning Rate Scheduling** (e.g., stepped or cyclical rates). Essential for finding the optimal minimum without oscillating wildly or getting stuck.",
+        "codeExample": "/* PyTorch Learning Rate Scheduler */\n# scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=30, gamma=0.1)"
+      },
+      {
+        "title": "The Full Backpropagation Algorithm",
+        "content": "A step-by-step review of backpropagation. Covers the four fundamental equations (error calculation, delta calculation, weight update) and the importance of using the derivative of the **Activation Function** during the backward pass.",
+        "codeExample": "/* Backpropagation Step (Conceptual) */\n# The gradient of the loss at layer L depends on the gradient at layer L+1."
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "title": "Regularization, Dropout, and Generalization 🔏",
+    "icon": "Code",
+    "subsections": [
+      {
+        "title": "Overfitting vs. Underfitting",
+        "content": "The central challenge. Covers **Overfitting** (model learns noise in training data, performs poorly on unseen data) vs. **Underfitting** (model is too simple, fails to capture underlying patterns). Regularization aims to mitigate overfitting.",
+        "codeExample": "/* Problem Identification */\n# Overfitting: Train Accuracy >> Test Accuracy\n# Underfitting: Train Accuracy is low"
+      },
+      {
+        "title": "L2 (Ridge) Regularization",
+        "content": "Adding a penalty to the loss function. Covers **L2 Regularization** (Ridge Regression), which adds the squared magnitude of weights ($\lambda \sum w_i^2$) to the loss. This encourages weights to be small, smoothing the decision boundary and reducing model complexity.",
+        "codeExample": "/* L2 Loss Function */\n# L_total = L_original + λ * ||W||²"
+      },
+      {
+        "title": "L1 (Lasso) Regularization",
+        "content": "Promoting model sparsity. Covers **L1 Regularization** (Lasso Regression), which adds the absolute magnitude of weights ($\lambda \sum |w_i|$) to the loss. This forces many weight coefficients to exactly zero, performing automatic **Feature Selection**.",
+        "codeExample": "/* L1 Loss Function */\n# L_total = L_original + λ * ||W||_1"
+      },
+      {
+        "title": "Dropout in Neural Networks",
+        "content": "A simple and powerful deep learning technique. Covers **Dropout**, where randomly selected neurons are temporarily ignored during a training step (e.g., 50% probability). This prevents neurons from co-adapting and forces the network to learn more robust, redundant representations.",
+        "codeExample": "/* Keras Dropout Layer */\n# Drops 50% of the inputs to the next layer\nmodel.add(Dropout(0.5))"
+      },
+      {
+        "title": "Early Stopping",
+        "content": "A simple technique to prevent overfitting. Covers **Early Stopping**, where the training process is halted when the model's performance on the **Validation Set** stops improving (or starts getting worse) for a fixed number of epochs (patience).",
+        "codeExample": "/* Keras Early Stopping Callback */\n# callback = EarlyStopping(monitor='val_loss', patience=10)"
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "title": "Convolutional Neural Networks (CNNs) 🖼️",
+    "icon": "Code",
+    "subsections": [
+      {
+        "title": "Convolutional Layers and Feature Maps",
+        "content": "The core component of CNNs. Covers the **Convolutional Layer**, which applies a small **Filter/Kernel** to the input image, producing **Feature Maps**. Explains the role of shared weights in reducing the number of parameters and the concept of **Padding** and **Stride**.",
+        "codeExample": "/* Keras Conv2D Layer */\nmodel.add(Conv2D(filters=32, kernel_size=(3, 3), activation='relu', input_shape=(64, 64, 3)))"
+      },
+      {
+        "title": "Pooling Layers (Max/Average) and Downsampling",
+        "content": "Reducing spatial dimensions. Covers **Pooling Layers** (Max Pooling, Average Pooling), which downsample the feature maps, reducing computational cost and making the detection of features invariant to small shifts.",
+        "codeExample": "/* PyTorch MaxPool2D */\n# nn.MaxPool2d(kernel_size=2, stride=2)"
+      },
+      {
+        "title": "Architecture Patterns (VGG, ResNet, Inception)",
+        "content": "Famous CNN architectures. Covers the structure of deep CNNs (VGG), networks using **Residual Connections (ResNet)** to solve the vanishing gradient problem, and **Inception Modules** (GoogLeNet) for efficient multi-scale feature extraction.",
+        "codeExample": "/* Conceptual Residual Block (ResNet) */\n# Output = F(x) + x"
+      },
+      {
+        "title": "1x1 Convolutions and Bottleneck Layers",
+        "content": "Using $1 \times 1$ convolutions for dimensionality management. Covers $1 \times 1$ convolutions used to change the number of **feature maps (channels)** without changing spatial dimensions, commonly used in **Bottleneck Layers** to reduce computational cost before expensive $3 \times 3$ convolutions.",
+        "codeExample": "/* 1x1 Conv Rationale */\n# Used primarily for channel-wise dimensionality reduction."
+      },
+      {
+        "title": "Global Average Pooling",
+        "content": "Replacing the final dense layers. Covers **Global Average Pooling (GAP)**, which averages the values of each feature map into a single value, significantly reducing the parameter count and mitigating overfitting in the classification head.",
+        "codeExample": "/* Keras GlobalAveragePooling2D */\nmodel.add(GlobalAveragePooling2D())"
+      }
+    ]
+  }
+]
+},
+  ai_ml_3: {
+    id: 'ai_ml_3',
+    title: 'Artificial Intelligence and Machine Language : Part III',
+    icon: BrainCircuit,
+    color: '#9b9d9d',
+    description: 'Deep Learning & Advanced Architectures',
+    units: [
+  {
+    "id": 28,
+    "title": "Image Data Augmentation 💡",
+    "icon": "Code",
+    "subsections": [
+      {
+        "title": "Data Augmentation Techniques",
+        "content": "Methods used to artificially increase the size and diversity of the training dataset. Covers techniques like **random rotations, translations, scaling, shearing, horizontal/vertical flipping, and color jittering**. This is crucial for improving model generalization and robustness against minor variations in real-world data.",
+        "codeExample": "/* Keras Image Data Generator */\nfrom tensorflow.keras.preprocessing.image import ImageDataGenerator\n\ndatagen = ImageDataGenerator(\n  rotation_range=20,\n  width_shift_range=0.2,\n  height_shift_range=0.2,\n  horizontal_flip=True\n)\n# datagen.flow(X_train, y_train)"
+      },
+      {
+        "title": "Online vs. Offline Augmentation",
+        "content": "Distinguishing between when augmentation occurs. Covers **Online Augmentation** (transforming images in real-time as they are fed to the model during training, standard practice) vs. **Offline Augmentation** (pre-generating and saving all augmented images to disk, feasible only for small datasets).",
+        "codeExample": "/* Online Augmentation Rationale */\n# Saves disk space and exposes the model to an infinite variety of transformed images in each epoch."
+      },
+      {
+        "title": "Mixup and CutMix",
+        "content": "Advanced regularization techniques. Covers **Mixup** (linearly combining two training samples and their labels) and **CutMix** (cutting and pasting patches between two images and mixing the labels proportionally). These methods provide effective regularization beyond standard image transformations.",
+        "codeExample": "/* Mixup Principle (Conceptual) */\n# x̃ = λx_i + (1-λ)x_j\n# ỹ = λy_i + (1-λ)y_j"
+      },
+      {
+        "title": "Augmentation Policy Optimization",
+        "content": "Automating the selection of augmentation techniques. Covers **AutoAugment** and similar techniques, which use search algorithms (like Reinforcement Learning) to automatically find the best combination and sequence of augmentation policies for a specific dataset, rather than relying on manual tuning.",
+        "codeExample": "/* AutoAugment Goal */\n# Use a meta-learning approach to discover the optimal augmentation strategy."
+      },
+      {
+        "title": "Augmentation Libraries (Albumentations)",
+        "content": "Using specialized libraries. Covers **Albumentations**, a dedicated Python library optimized for fast image transformation, often outperforming the built-in utilities in Keras or PyTorch for production computer vision pipelines.",
+        "codeExample": "/* Albumentations Usage Rationale */\n# Provides a wider variety of transformations and optimized performance, particularly on GPUs."
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "title": "Transfer Learning and Fine-Tuning 🎓",
+    "icon": "Code",
+    "subsections": [
+      {
+        "title": "Transfer Learning Rationale and Benefits",
+        "content": "The standard approach for deep learning with limited data. Covers **Transfer Learning**, which reuses a model (the base model) pre-trained on a massive dataset (e.g., ImageNet) to solve a related task. This significantly reduces training time and data requirements.",
+        "codeExample": "/* Transfer Learning Benefit */\n# Model has already learned low-level features (edges, textures, shapes)."
+      },
+      {
+        "title": "Feature Extraction Strategy",
+        "content": "The simplest form of transfer learning. Covers **Feature Extraction**, where the weights of the pre-trained base layers are frozen (`trainable=False`), and only the newly added output layers are trained on the new dataset. Ideal when the new dataset is small and similar to the original.",
+        "codeExample": "/* Keras Feature Extraction */\nbase_model = ResNet50(weights='imagenet', include_top=False)\nbase_model.trainable = False # Freeze the base weights"
+      },
+      {
+        "title": "Fine-Tuning Strategy",
+        "content": "Adapting the base model. Covers **Fine-Tuning**, where the top layers are unfrozen, and the entire model (or large blocks of layers) is retrained for a few epochs using a very **low learning rate**. Necessary when the new dataset is large or significantly different from the original.",
+        "codeExample": "/* Keras Fine-Tuning */\nbase_model.trainable = True # Unfreeze all layers\n# Recompile with a very low learning rate (e.g., 1e-5)"
+      },
+      {
+        "title": "Layer-Wise Unfreezing",
+        "content": "A nuanced fine-tuning technique. Covers **Layer-Wise Unfreezing**, where only the later (high-level feature) layers of the base model are unfrozen and retrained, while the early (low-level feature) layers remain frozen. This is a compromise between pure feature extraction and full fine-tuning.",
+        "codeExample": "/* Layer-Wise Unfreezing Technique */\n# Freeze layers up to a certain depth:\n# for layer in base_model.layers[:100]:\n#     layer.trainable = False"
+      },
+      {
+        "title": "Dataset Similarity Matrix",
+        "content": "A guide for choosing the strategy. Covers a conceptual guide for selecting the optimal transfer learning strategy based on the size and similarity of the new dataset relative to the original pre-training data.",
+        "codeExample": "/* Strategy Selection */\n# Small, Similar Data: Feature Extraction (Freeze all base layers)\n# Large, Dissimilar Data: Full Fine-Tuning (Unfreeze all base layers)"
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "title": "Recurrent Neural Networks (RNNs) 💬",
+    "icon": "Code",
+    "subsections": [
+      {
+        "title": "Recurrent Layers and Hidden State",
+        "content": "Processing sequential data. Covers **RNNs**, which use a **Hidden State** vector ($\mathbf{h}_t$) to maintain memory of previous elements in the sequence. Explains that the same weights are applied recursively at each time step, enabling sequence generalization.",
+        "codeExample": "/* Conceptual RNN Forward Pass */\n# h_t = f(W_{hh} \cdot h_{t-1} + W_{xh} \cdot x_t + b)"
+      },
+      {
+        "title": "Vanishing/Exploding Gradient Problem",
+        "content": "The major failure mode of simple RNNs. Covers the **Vanishing Gradient Problem**, where gradients shrink exponentially during backpropagation through time, preventing the model from learning long-range dependencies.",
+        "codeExample": "/* Vanishing Gradient Mitigation */\n# Specialized architectures (LSTM/GRU) and gradient clipping."
+      },
+      {
+        "title": "LSTMs (Long Short-Term Memory)",
+        "content": "The first solution to vanishing gradients. Covers **LSTMs**, which use three crucial **Gates** (Forget, Input, Output) to control the flow of information into and out of the **Cell State** ($\mathbf{c}_t$), allowing the network to selectively remember or forget long-term information.",
+        "codeExample": "/* Keras LSTM Layer */\nmodel.add(LSTM(units=128, input_shape=(timesteps, features)))"
+      },
+      {
+        "title": "GRUs (Gated Recurrent Units)",
+        "content": "A simplified, effective alternative to LSTMs. Covers **GRUs**, which combine the Forget and Input gates into a single **Update Gate** and merge the cell state and hidden state. GRUs are faster to train and often achieve similar performance with fewer parameters.",
+        "codeExample": "/* PyTorch GRU Layer */\n# nn.GRU(input_size, hidden_size)"
+      },
+      {
+        "title": "Bidirectional RNNs",
+        "content": "Processing context from both directions. Covers **Bidirectional RNNs**, which process the input sequence in both forward and reverse directions, concatenating the hidden states at each time step. Essential for tasks like Named Entity Recognition where output depends on future context.",
+        "codeExample": "/* Bidirectional Rationale */\n# Provides full contextual understanding of the sequence."
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "title": "Transformers and Attention Mechanism 💡",
+    "icon": "Code",
+    "subsections": [
+      {
+        "title": "The Transformer Architecture (Encoder/Decoder)",
+        "content": "The dominant architecture for modern NLP/LLMs. Covers the **Transformer**, which completely removes recurrence (RNNs) and relies solely on the **Attention Mechanism**. The standard structure includes an **Encoder Stack** (input sequence understanding) and a **Decoder Stack** (output sequence generation).",
+        "codeExample": "/* Transformer Key Feature */\n# Processes all tokens simultaneously (parallelism), unlike sequential RNNs."
+      },
+      {
+        "title": "Self-Attention Mechanism",
+        "content": "The core innovation. Covers **Self-Attention**, where the model weighs the importance of every other token in the input sequence to compute the representation of the current token. Uses **Query, Key, and Value** vectors ($\mathbf{Q}, \mathbf{K}, \mathbf{V}$).",
+        "codeExample": "/* Attention Formula (Simplified) */\n# Attention(Q, K, V) = softmax(Q K^T / √d_k) V"
+      },
+      {
+        "title": "Multi-Head Attention",
+        "content": "Improving attention capacity. Covers **Multi-Head Attention**, which runs the attention mechanism multiple times in parallel with different weight matrices, allowing the model to focus on different aspects of the input simultaneously (e.g., syntactic vs. semantic relationships).",
+        "codeExample": "/* Multi-Head Rationale */\n# Allows the model to learn multiple representation subspaces."
+      },
+      {
+        "title": "Positional Encoding",
+        "content": "Injecting sequence order information. Covers **Positional Encoding** (a fixed or learned vector added to the input embeddings). Essential because the Transformer's self-attention mechanism is permutation-invariant (naturally ignores sequence order).",
+        "codeExample": "/* Positional Encoding Need */\n# Provides the model with the absolute or relative position of each token."
+      },
+      {
+        "title": "Large Language Models (LLMs)",
+        "content": "Scaling Transformer models. Covers the concept of **Large Language Models (LLMs)** (e.g., GPT, LLaMA), which are massive, pre-trained Transformer models that exhibit emergent behavior and powerful generalization capabilities through sheer scale (billions of parameters).",
+        "codeExample": "/* LLM Training */\n# Trained primarily using next-token prediction (autoregressive learning) on massive datasets."
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "title": "Generative Adversarial Networks (GANs) 🎨",
+    "icon": "Code",
+    "subsections": [
+      {
+        "title": "GAN Architecture (Generator and Discriminator)",
+        "content": "The adversarial framework. Covers **GANs**, which consist of two competing neural networks: the **Generator** (creates fake data from random noise) and the **Discriminator** (a classifier that tries to distinguish between real and fake data).",
+        "codeExample": "/* GAN Training Goal */\n# Generator seeks to maximize the Discriminator's error.\n# Discriminator seeks to minimize its own error."
+      },
+      {
+        "title": "Adversarial Training Process",
+        "content": "The minimax game. Covers the iterative training process where the Generator and Discriminator are trained alternately. Training is complete when the Discriminator can no longer distinguish real data from the Generator's fake data (equilibrium).",
+        "codeExample": "/* Minimax Objective Function */\n# min_G max_D [E_x[log D(x)] + E_z[log(1 - D(G(z)))]]"
+      },
+      {
+        "title": "Latent Space and Data Generation",
+        "content": "The source of creation. Covers the **Latent Space**—the multi-dimensional vector space where the Generator's random input noise ($\mathbf{z}$) lives. Traversing the latent space allows generating variations and interpolations between synthetic data samples.",
+        "codeExample": "/* Latent Space Rationale */\n# Used to generate novel, structured data by sampling the noise vector."
+      },
+      {
+        "title": "Conditional GANs (cGANs)",
+        "content": "Generating data based on control inputs. Covers **cGANs**, where both the Generator and Discriminator are conditioned on some input data ($\mathbf{y}$) (e.g., text, class label). This allows generating images corresponding to a specific description or category.",
+        "codeExample": "/* cGAN Input */\n# Generator input: Noise vector (z) AND Condition vector (y)"
+      },
+      {
+        "title": "GAN Training Instability",
+        "content": "The main challenge. Covers **Training Instability** in GANs, specifically **Mode Collapse**, where the Generator learns to produce only a limited variety of samples (a single mode of the data distribution). Requires careful tuning and specific loss functions (e.g., Wasserstein GANs).",
+        "codeExample": "/* Mode Collapse Symptom */\n# Generator outputs the same few images repeatedly."
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "title": "Model Architecture (Layers, Activation) 🏗️",
+    "icon": "Code",
+    "subsections": [
+      {
+        "title": "Layer Types (Dense, Conv, Pooling)",
+        "content": "Building blocks review. Covers the function of **Dense (Fully Connected)** layers (universal approximator), **Convolutional** layers (spatial feature extraction), and **Pooling** layers (downsampling).",
+        "codeExample": "/* Layer Order Rationale */\n# Input -> Conv -> ReLU -> Pool -> ... -> Dense -> Output"
+      },
+      {
+        "title": "Activation Functions (ReLU, Sigmoid, Softmax)",
+        "content": "Implementing non-linearity. Covers **ReLU** (standard for hidden layers, solves vanishing gradients in deep networks), **Sigmoid** (output layer for binary classification), and **Softmax** (output layer for multi-class classification, outputs probabilities summing to 1).",
+        "codeExample": "/* Softmax Function */\n# P(c) = e^z_c / Σ e^z_i"
+      },
+      {
+        "title": "Batch Normalization",
+        "content": "A technique to stabilize training. Covers **Batch Normalization (BatchNorm)**, which normalizes the inputs to a layer to have a mean of 0 and a variance of 1 across each mini-batch. This allows for higher learning rates and faster convergence.",
+        "codeExample": "/* BatchNorm Placement */\n# Typically inserted after the convolutional/dense layer but before the activation function."
+      },
+      {
+        "title": "Weight Initialization",
+        "content": "Setting initial parameter values. Covers initialization methods (e.g., **Xavier/Glorot** and **He/Kaiming** initialization) that prevent activations from becoming too large or too small (exploding or vanishing gradients) at the beginning of training.",
+        "codeExample": "/* He Initialization Rationale */\n# Recommended for networks using the ReLU activation function."
+      },
+      {
+        "title": "Skip Connections (Residual Blocks)",
+        "content": "Architectural shortcut. Covers **Skip Connections** (ResNet) where the output of a layer is added directly to the output of a deeper layer. This solves the vanishing gradient problem and allows information to bypass blocks of computation.",
+        "codeExample": "/* Residual Block Formula */\n# y = F(x) + x"
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "title": "Hyperparameter Tuning and AutoML ⚙️",
+    "icon": "List",
+    "subsections": [
+      {
+        "title": "Hyperparameter Definition",
+        "content": "Distinguishing parameters from hyperparameters. Covers **Hyperparameters** as configuration variables external to the model (e.g., learning rate, number of layers, max depth) that must be optimized before training begins.",
+        "codeExample": "/* Examples of Hyperparameters */\n# Learning Rate, Batch Size, Regularization Strength (λ), Number of Trees."
+      },
+      {
+        "title": "Grid Search and Random Search",
+        "content": "Basic tuning methods. Covers **Grid Search** (evaluating all combinations of hyperparameter values defined on a fixed grid) and the more efficient **Random Search** (sampling random combinations, often more effective in high-dimensional spaces).",
+        "codeExample": "/* Scikit-learn GridSearchCV */\nfrom sklearn.model_selection import GridSearchCV\n# param_grid = {'C': [0.1, 1, 10], 'gamma': [1, 0.1, 0.01]}"
+      },
+      {
+        "title": "Bayesian Optimization",
+        "content": "A sophisticated tuning method. Covers **Bayesian Optimization**, which builds a probabilistic model (surrogate model) of the function that maps hyperparameters to model performance. This model is used to intelligently suggest the next set of hyperparameters to evaluate, minimizing expensive training runs.",
+        "codeExample": "/* Bayesian Optimization Rationale */\n# Tries to balance exploitation (testing known good areas) and exploration (testing new areas)."
+      },
+      {
+        "title": "Automated Machine Learning (AutoML)",
+        "content": "Automating the entire ML workflow. Covers **AutoML** (e.g., Google Cloud AutoML, AutoGluon), which automatically performs data preprocessing, feature engineering, model selection, and hyperparameter tuning, requiring minimal human intervention.",
+        "codeExample": "/* AutoML Goal */\n# Automate the model development lifecycle for non-experts."
+      },
+      {
+        "title": "Pruning and Model Compression Techniques",
+        "content": "Optimizing model size post-training. Covers **Pruning** (removing unnecessary connections/weights that contribute little to the output) and **Quantization** (reducing the precision of weights from 32-bit floats to 8-bit integers) to create smaller, faster models suitable for deployment.",
+        "codeExample": "/* Quantization Benefit */\n# Reduces model size by up to 4x with minimal loss in accuracy."
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "title": "MLOps: Pipeline Automation and CI/CD 🔄",
+    "icon": "Code",
+    "subsections": [
+      {
+        "title": "ML Pipeline Automation",
+        "content": "Structuring the end-to-end ML workflow. Covers defining the **ML Pipeline** stages (Data Ingestion, Preprocessing, Training, Evaluation, Deployment) and using tools (e.g., **Kubeflow, Airflow**) to automate the entire workflow, eliminating manual intervention.",
+        "codeExample": "/* Pipeline Stages (Conceptual) */\n# Trigger -> Data Prep -> Model Train -> Model Evaluate -> Model Register -> Deployment"
+      },
+      {
+        "title": "CI/CD for Machine Learning",
+        "content": "Adapting DevOps for ML. Covers **Continuous Integration (CI)** (automated testing of code, logic, and data schema) and **Continuous Delivery/Deployment (CD)** (automatically deploying the model as a service or container upon successful evaluation).",
+        "codeExample": "/* CI/CD Goal */\n# Ensure every change to the code or data automatically results in a validated model."
+      },
+      {
+        "title": "Data and Model Versioning",
+        "content": "Tracking lineage. Covers the need to version **Code, Data, and Models** simultaneously to ensure reproducibility. Tools like **DVC (Data Version Control)** and **MLflow** are used to track the exact data and hyperparameters used to generate a specific model artifact.",
+        "codeExample": "/* Reproducibility Check */\n# Model v2.1 = Code v1.3 + Data v5.0 + Hyperparameters (LR=0.01)"
+      },
+      {
+        "title": "Orchestration Tools (Airflow, Kubeflow)",
+        "content": "Managing complex dependencies. Covers **Apache Airflow** (for scheduling and managing workflows as Directed Acyclic Graphs, DAGs) and **Kubeflow** (ML toolkit for deploying and managing ML workflows on Kubernetes).",
+        "codeExample": "/* Airflow DAG Task (Conceptual) */\n# Task 1: Clean Data (PythonOperator)\n# Task 2: Train Model (BashOperator calling PyTorch script)\n# Task 3: Evaluate Model (PythonOperator)"
+      },
+      {
+        "title": "Testing in MLOps (Data, Model, Integration)",
+        "content": "Defining tests unique to ML. Covers **Data Validation Tests** (checking data schema, range, and statistical drift), **Model Tests** (checking performance metrics against a minimum baseline), and **Integration Tests** (checking the deployed API response).",
+        "codeExample": "/* Model Baseline Test */\n# require(test_accuracy > 0.85, 'Model accuracy failed to meet baseline.')"
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "title": "Model Versioning and Registry (MLflow/DVC) 📁",
+    "icon": "List",
+    "subsections": [
+      {
+        "title": "Model Registry and Artifact Management",
+        "content": "The central repository for models. Covers the **Model Registry** (a component of tools like **MLflow**) used to store, version, and manage the lifecycle stages (Staging, Production, Archived) of trained models. Artifacts (model files, metadata) are stored here.",
+        "codeExample": "/* Model Registry Lifecycle */\n# Register Model V1 -> Transition to Staging -> Transition to Production"
+      },
+      {
+        "title": "MLflow Tracking Server",
+        "content": "Tracking experiments. Covers **MLflow Tracking** to log model parameters, metrics, and source code during training runs. This creates a central historical record of every experiment, enabling easy comparison and reproducibility.",
+        "codeExample": "/* MLflow Tracking (Python) */\nimport mlflow\nmlflow.log_param(\"learning_rate\", lr)\nmlflow.log_metric(\"val_accuracy\", acc)"
+      },
+      {
+        "title": "Data Version Control (DVC)",
+        "content": "Version control for data. Covers **DVC (Data Version Control)**, which works with Git to version data and model files by storing metadata and hashes in Git, while the large data files themselves are stored externally (S3, GCS). This solves the large-file problem in Git.",
+        "codeExample": "/* DVC Command */\n# dvc add data/raw_data.csv # Adds data hash to DVC metadata\n# git commit -m 'Updated DVC pointer to new data version'"
+      },
+      {
+        "title": "Reproducibility via Versioning",
+        "content": "Ensuring the ability to recreate any result. Covers the combination of **Code Version (Git), Data Version (DVC/Artifacts), and Environment Version (Conda/Docker)** to create a fully reproducible snapshot of a model's origin.",
+        "codeExample": "/* Reproducibility Stack */\n# Git Commit Hash + DVC Lock File + Docker Image Tag"
+      },
+      {
+        "title": "A/B Testing Integration",
+        "content": "Using the registry in deployment. Covers integrating the Model Registry with **Model Serving** infrastructure to easily switch model versions for **A/B Testing** (e.g., serving Model A to 90% of users and Model B to 10% of users).",
+        "codeExample": "/* A/B Test Deployment Goal */\n# If Model B (new) performance is better than Model A (old) after 2 weeks, promote B to 100%."
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "title": "Model Serving (Flask/FastAPI) and API Design 📡",
+    "icon": "Code",
+    "subsections": [
+      {
+        "title": "REST API Design for Inference",
+        "content": "Designing the endpoint for predictions. Covers creating a simple **REST API** (using Flask or FastAPI) with an endpoint (`/predict`) that accepts input data (JSON) and returns the model's prediction (JSON). Emphasizes using efficient, lightweight frameworks for low-latency serving.",
+        "codeExample": "/* FastAPI Predict Endpoint */\nfrom fastapi import FastAPI\n\napp = FastAPI()\n# @app.post(\"/predict\")\n# def predict(data: InputSchema):\n#     # Load model and return prediction"
+      },
+      {
+        "title": "Model Loading and Initialization",
+        "content": "Minimizing cold-start latency. Covers the practice of **loading the model artifact into memory** only once during the application startup phase (initialization). This prevents high latency on the very first prediction request (cold start).",
+        "codeExample": "/* Model Initialization (FastAPI Startup) */\n# from fastapi import FastAPI\n# model = None\n# @app.on_event(\"startup\")\n# async def startup_event():\n#     global model\n#     model = load_model_from_disk('model.pkl')"
+      },
+      {
+        "title": "Prediction Latency and Throughput",
+        "content": "Measuring serving performance. Covers key metrics: **Latency** (time taken for a single request to return a prediction) and **Throughput** (number of requests processed per second). Optimization involves using optimized frameworks (FastAPI) and batching requests.",
+        "codeExample": "/* Performance Metric */\n# Goal: P95 Latency < 100ms (95% of requests complete in under 100 milliseconds)."
+      },
+      {
+        "title": "Batch Inference and Asynchronous Serving",
+        "content": "Optimizing resource usage. Covers **Batch Inference** (processing multiple requests simultaneously to maximize GPU utilization) and designing **Asynchronous APIs** (using background workers) for long-running inference tasks (e.g., processing a large video file).",
+        "codeExample": "/* Asynchronous Serving Rationale */\n# Returns a request ID immediately, allowing the client to poll for the final result later."
+      },
+      {
+        "title": "Input Schema Validation (Pydantic)",
+        "content": "Ensuring API robustness. Covers using **Pydantic** (in FastAPI) or similar libraries to define the exact input data schema and automatically validate incoming JSON requests, rejecting malformed data before it reaches the model.",
+        "codeExample": "/* Pydantic Schema Validation (FastAPI) */\nfrom pydantic import BaseModel\n\nclass InputSchema(BaseModel):\n    feature_a: float\n    feature_b: int\n    # FastAPI automatically ensures input data conforms to this structure."
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "title": "Containerization (Docker/Kubernetes) for ML 🐳",
+    "icon": "List",
+    "subsections": [
+      {
+        "title": "Docker for Reproducible Environments",
+        "content": "Ensuring consistency across environments. Covers using **Docker** to package the entire inference stack (operating system, Python version, dependencies, model artifact, serving code) into a single, portable **Docker Image**, eliminating 'works on my machine' issues.",
+        "codeExample": "/* Dockerfile Snippet */\nFROM python:3.9-slim\nWORKDIR /app\nCOPY requirements.txt .\nRUN pip install -r requirements.txt\nCOPY . .\nCMD [\"gunicorn\", \"main:app\"]"
+      },
+      {
+        "title": "Multi-Stage Builds (Size Optimization)",
+        "content": "Minimizing image size. Covers **Multi-Stage Docker Builds** to separate the build environment (where compilation and large dev tools happen) from the final, minimal runtime environment, significantly reducing the final image size and deployment time.",
+        "codeExample": "/* Multi-Stage Build Rationale */\n# Stage 1: Build (3GB image) -> Stage 2: Runtime (300MB image, only includes artifacts)"
+      },
+      {
+        "title": "Kubernetes for Scaling and Orchestration",
+        "content": "Managing production deployment. Covers **Kubernetes (K8s)** for orchestrating multiple Docker containers (**Pods**). Details using **Deployments** (to manage replicas), **Services** (for load balancing), and **Ingress** (for external access) to ensure high availability and scalability of the inference API.",
+        "codeExample": "/* Kubernetes Deployment YAML (Snippet) */\nspec:\n  replicas: 3\n  template:\n    spec:\n      containers:\n      - name: model-server\n        image: my-repo/model-api:latest\n        resources:\n          limits: { cpu: \"1\", memory: \"2Gi\" }"
+      },
+      {
+        "title": "Horizontal Pod Autoscaling (HPA)",
+        "content": "Automating scaling based on load. Covers **Horizontal Pod Autoscaling (HPA)** in Kubernetes, which automatically adjusts the number of deployed model replicas (pods) based on real-time metrics, typically CPU utilization or custom latency metrics.",
+        "codeExample": "/* HPA Trigger */\n# If average CPU utilization exceeds 70%, increase replicas."
+      },
+      {
+        "title": "GPU Support in Containers",
+        "content": "Deploying deep learning models. Covers configuring Docker and Kubernetes (using **NVIDIA Container Toolkit/Device Plugins**) to expose GPU resources to specific containers, which is necessary for high-performance deep learning inference.",
+        "codeExample": "/* Kubernetes GPU Resource Request */\nresources:\n  limits:\n    nvidia.com/gpu: 1"
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "title": "Cloud ML Platforms (AWS/Azure/GCP) ☁️",
+    "icon": "List",
+    "subsections": [
+      {
+        "title": "Platform Comparison (SageMaker, Vertex AI, Azure ML)",
+        "content": "Overview of major cloud ML offerings. Covers **AWS SageMaker**, **Google Cloud Vertex AI**, and **Azure Machine Learning**, comparing their managed services for data labeling, notebook environments, model training, and MLOps automation.",
+        "codeExample": "/* Cloud Platform Feature Rationale */\n# Vertex AI: Strong integration with Google's MLOps and BigQuery.\n# SageMaker: Broadest set of tools and integration with AWS services (S3, Lambda)."
+      },
+      {
+        "title": "Managed Training and Hyperparameter Tuning",
+        "content": "Using cloud services to scale training. Covers running large-scale training jobs and automated **Hyperparameter Tuning** experiments on distributed cloud infrastructure without manually provisioning VMs or GPUs.",
+        "codeExample": "/* Vertex AI Training Flow (Conceptual) */\n# 1. Provide custom training script and Docker image.\n# 2. Configure GPU type and scale tier.\n# 3. Platform manages infrastructure and scaling."
+      },
+      {
+        "title": "Model Endpoint Deployment and Scaling",
+        "content": "Deploying models as high-availability endpoints. Covers creating a managed **Inference Endpoint** (e.g., SageMaker Endpoint) that handles auto-scaling, load balancing, and health checks automatically for production traffic.",
+        "codeExample": "/* Endpoint Deployment Benefit */\n# Cloud platform handles infrastructure overhead, freeing developers to focus on model logic."
+      },
+      {
+        "title": "Cloud Feature Stores",
+        "content": "Centralizing feature serving. Covers **Feature Stores** (e.g., Vertex AI Feature Store), which centralize and serve precomputed features consistently across both **Training** (historical consistency) and **Inference** (low latency).",
+        "codeExample": "/* Feature Store Rationale */\n# Prevents Training-Serving Skew (inconsistent feature calculation between environments)."
+      },
+      {
+        "title": "Serverless Inference (Lambda, Cloud Functions)",
+        "content": "Cost-effective serving for low traffic. Covers deploying small, lightweight models to **Serverless Compute** (e.g., AWS Lambda, Google Cloud Functions). Ideal for sporadic or low-volume prediction requests where paying only per invocation is cost-effective.",
+        "codeExample": "/* Serverless Use Case */\n# Processing background jobs, image classification on upload, or low-frequency API endpoints."
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "title": "Feature Stores and Data Pipelines 📦",
+    "icon": "Code",
+    "subsections": [
+      {
+        "title": "Feature Store Architecture",
+        "content": "The system for managing features. Covers the **Feature Store** as the centralized data layer designed to manage and serve feature data consistently. Key components include an **Online Store** (low latency, Redis/Cassandra) for serving inference and an **Offline Store** (high throughput, S3/BigQuery) for training.",
+        "codeExample": "/* Feature Store Components */\n# Online Store: Inference (low latency, high freshness)\n# Offline Store: Training (high volume, historical data)"
+      },
+      {
+        "title": "Training-Serving Skew Mitigation",
+        "content": "The primary problem solved by feature stores. Covers **Training-Serving Skew**—the performance degradation that occurs when features used during training are calculated differently than features used during serving. The Feature Store guarantees consistent feature logic.",
+        "codeExample": "/* Feature Consistency Check */\n# Feature Store ensures the exact feature transformation function (e.g., z-score scaling) is used for both training and serving."
+      },
+      {
+        "title": "Data Pipeline Orchestration (Airflow, Dagster)",
+        "content": "Building reliable data flows. Covers using **Airflow** or **Dagster** to orchestrate complex **ETL/ELT** pipelines that ingest raw data, perform feature transformations, and materialize (pre-calculate) features into the Feature Store.",
+        "codeExample": "/* Airflow Task Example */\n# Task: Transform_Raw_Data -> Task: Calculate_Feature_Vector -> Task: Materialize_To_FeatureStore"
+      },
+      {
+        "title": "Streaming vs. Batch Feature Updates",
+        "content": "Managing feature freshness. Covers **Batch Updates** (updating features periodically, e.g., daily) for static data and **Streaming Updates** (using Kafka/PubSub) for features requiring high freshness (e.g., current user click rates).",
+        "codeExample": "/* Feature Freshness Rationale */\n# Real-time data (stock prices, fraud signals) requires streaming updates."
+      },
+      {
+        "title": "Feature Discovery and Governance",
+        "content": "Organizing feature data. Covers the importance of **Feature Discovery** (cataloging available features with metadata and lineage) and **Governance** (managing access controls and feature deprecation) within the Feature Store.",
+        "codeExample": "/* Feature Lineage Tracking */\n# Tracking which upstream tables and transformation scripts contributed to a specific feature."
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "title": "Model Monitoring and Drift Detection 📈",
+    "icon": "Code",
+    "subsections": [
+      {
+        "title": "Inference Monitoring Metrics",
+        "content": "Tracking model health in production. Covers essential production metrics: **Prediction Count**, **Latency (P95)**, **Error Rate**, and **Resource Utilization** (CPU/GPU load).",
+        "codeExample": "/* Latency Metric Goal */\n# P95 (95th percentile) latency should remain below 100ms."
+      },
+      {
+        "title": "Data Drift Detection",
+        "content": "Monitoring input stability. Covers **Data Drift**—when the statistical properties of the input features in production data change significantly compared to the training data. Tools like **Kolmogorov-Smirnov (KS) test** or **Population Stability Index (PSI)** are used to detect this.",
+        "codeExample": "/* Data Drift Rationale */\n# If the distribution of a feature (e.g., 'age') changes, the model's performance will degrade."
+      },
+      {
+        "title": "Concept Drift Detection",
+        "content": "Monitoring relationship stability. Covers **Concept Drift**—when the relationship between the input features and the target variable changes (the underlying concept the model learned becomes stale). This is often detected by monitoring the model's **Prediction Accuracy** or **Error Rate** over time.",
+        "codeExample": "/* Concept Drift Indication */\n# Model accuracy drops significantly even though input data remains statistically similar to training data."
+      },
+      {
+        "title": "A/B Testing and Canary Deployment",
+        "content": "Safely rolling out new models. Covers **A/B Testing** (routing traffic to compare Model A vs. Model B performance) and **Canary Deployment** (gradually shifting a small percentage of traffic to the new model) to test performance and stability before full rollout.",
+        "codeExample": "/* Canary Deployment Flow */\n# Traffic Split: Model Old (99%) -> Model New (1%)"
+      },
+      {
+        "title": "Alerting and Incident Response",
+        "content": "Automating failure notification. Covers setting up **Alerts** based on thresholds (e.g., error rate > 5%, latency > 200ms). Defines the process for **Incident Response**: automated rollback to the last known good version (LKG) when critical metrics fail.",
+        "codeExample": "/* Automated Rollback Rule */\n# IF Accuracy(New) < Accuracy(Old) - 5% THEN Deploy(Model LKG)."
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "title": "Explainable AI (XAI) and Interpretability ❓",
+    "icon": "Code",
+    "subsections": [
+      {
+        "title": "Model Interpretability vs. Explainability",
+        "content": "Distinguishing goals. **Interpretability** is the degree to which a human can understand the *cause* of a decision (e.g., Decision Trees). **Explainability (XAI)** refers to techniques used to explain the *output* of complex, opaque models (e.g., LIME, SHAP).",
+        "codeExample": "/* Distinction */\n# Decision Tree: Interpretable (Directly readable)\n# Neural Network: Explainable (Requires post-hoc tools)"
+      },
+      {
+        "title": "SHAP (SHapley Additive explanations)",
+        "content": "A unified, game-theory approach. Covers **SHAP** values, which assign an importance value (Shapley value) to every feature for a specific prediction, ensuring local fidelity (explanation matches model locally) and consistency.",
+        "codeExample": "/* SHAP Interpretation */\n# Feature X contributed +10% to the probability of Class A for this specific user."
+      },
+      {
+        "title": "LIME (Local Interpretable Model-agnostic Explanations)",
+        "content": "Generating local explanations. Covers **LIME**, which creates a simple, local, linear model around a single instance's prediction to explain the complex model's behavior for that specific prediction. Model-agnostic and widely applicable.",
+        "codeExample": "/* LIME Rationale */\n# Explain a black box by approximating it locally with a simple, linear model."
+      },
+      {
+        "title": "Feature Importance (Global Interpretability)",
+        "content": "Understanding the overall model. Covers **Global Feature Importance** (e.g., permutation importance, coefficient magnitude) to identify which features are generally most influential across the entire dataset, guiding model refinement and domain understanding.",
+        "codeExample": "/* Permutation Importance */\n# Measure how much the model's accuracy decreases when the values of a single feature are randomly shuffled."
+      },
+      {
+        "title": "Anchors and Counterfactual Explanations",
+        "content": "Advanced XAI concepts. Covers **Anchors** (minimal, necessary conditions sufficient to guarantee a prediction). Details **Counterfactual Explanations** (describing the smallest change to an input feature that would flip the model's prediction).",
+        "codeExample": "/* Counterfactual Example */\n# Prediction: Loan denied.\n# Counterfactual: If your income was $10,000 higher, the loan would be approved."
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "title": "ML Model Security and Privacy 🔒",
+    "icon": "Code",
+    "subsections": [
+      {
+        "title": "Adversarial Attacks and Evasion",
+        "content": "Exploiting model vulnerability. Covers **Adversarial Attacks**, where small, imperceptible perturbations (noise) are added to input data to force the model to misclassify (e.g., making a stop sign look like a yield sign). **Evasion Attacks** happen at inference time.",
+        "codeExample": "/* Adversarial Attack Principle */\n# Human sees Image A. Model sees Image A + Noise (Model predicts Class B)."
+      },
+      {
+        "title": "Data Poisoning and Integrity",
+        "content": "Attacks on the training data. Covers **Data Poisoning** (injecting malicious data into the training set) to either degrade the model's overall performance or introduce specific backdoors (hidden triggers) that the attacker can later exploit.",
+        "codeExample": "/* Data Poisoning Defense */\n# Robust data validation and outlier detection during the ingestion pipeline."
+      },
+      {
+        "title": "Model Extraction and Intellectual Property",
+        "content": "Stealing the model. Covers **Model Extraction/Theft**, where an attacker queries the prediction API repeatedly to reconstruct a functional copy of the proprietary model's weights and architecture. Mitigation involves query limitations and defense mechanisms.",
+        "codeExample": "/* Model Extraction Defense */\n# Rate limiting, adding noise to prediction outputs, or monitoring query patterns."
+      },
+      {
+        "title": "Differential Privacy (DP)",
+        "content": "Protecting training data confidentiality. Covers **Differential Privacy (DP)**, a formal framework that adds controlled noise to the input data or model weights during training to ensure that the presence or absence of any single individual's data does not significantly alter the resulting model.",
+        "codeExample": "/* DP Goal */\n# Prevent an attacker from inferring sensitive information about an individual in the training set."
+      },
+      {
+        "title": "Federated Learning (Privacy-Preserving)",
+        "content": "Training models on decentralized data. Covers **Federated Learning**, where models are trained locally on client devices (e.g., phones, hospitals) and only the aggregated weight updates (gradients) are shared with the central server. This keeps sensitive raw data localized and private.",
+        "codeExample": "/* Federated Learning Flow */\n# Data stays on Device -> Device trains local model -> Central Server averages gradients from all devices."
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "title": "Bias, Fairness, and Ethical AI 🎯",
+    "icon": "Code",
+    "subsections": [
+      {
+        "title": "Sources of Bias (Data vs. Algorithm)",
+        "content": "Identifying the origins of unfairness. Covers **Historical Bias** (bias in the real-world data reflecting societal prejudice) and **Measurement Bias** (flaws in the data collection process). Explains that bias in the data is inherited and amplified by the algorithm.",
+        "codeExample": "/* Bias Source */\n# Data Bias: Underrepresentation of a specific demographic in the training set."
+      },
+      {
+        "title": "Fairness Metrics (Demographic Parity, Equal Opportunity)",
+        "content": "Quantifying unfairness. Covers defining **Fairness** using statistical metrics for protected groups (e.g., gender, race). **Demographic Parity** requires equal positive outcome rates across groups. **Equal Opportunity** requires equal True Positive Rates (Recall) across groups.",
+        "codeExample": "/* Equal Opportunity Goal */\n# True Positive Rate (Recall) must be equal for Group A and Group B."
+      },
+      {
+        "title": "Mitigation Techniques (Pre-Processing, In-Processing)",
+        "content": "Correcting bias. Covers **Pre-Processing** (re-weighting or re-sampling the data before training). **In-Processing** (adding a fairness constraint or regularization term to the loss function during training). **Post-Processing** (adjusting the prediction threshold after training).",
+        "codeExample": "/* Pre-Processing Technique */\n# Up-sampling (duplicating) underrepresented class samples to balance the training set."
+      },
+      {
+        "title": "Transparency and Accountability",
+        "content": "Ethical obligations. Covers the need for **Transparency** (documenting data sources, model limitations, and evaluation metrics) and **Accountability** (establishing clear responsibility for model outcomes, especially in high-stakes decisions).",
+        "codeExample": "/* Model Card Requirement */\n# Documentation should include: intended use, limitations, and fairness evaluations."
+      },
+      {
+        "title": "AI Audits and Regulatory Compliance",
+        "content": "External validation. Covers conducting independent **AI Audits** to check for security and ethical flaws. Discusses compliance with major regulations (e.g., **GDPR**'s 'Right to Explanation' for automated decisions).",
+        "codeExample": "/* Compliance Requirement */\n# For regulated decisions (e.g., loan approval), the system must provide a human-understandable reason for the outcome."
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "title": "Distributed Training and GPU Management ⚡",
+    "icon": "Code",
+    "subsections": [
+      {
+        "title": "GPU Acceleration and CUDA",
+        "content": "Hardware for deep learning. Covers the role of **GPUs** (Graphics Processing Units) in accelerating matrix multiplication due to their massive parallel architecture. **CUDA** is NVIDIA's parallel computing platform essential for using PyTorch and TensorFlow efficiently.",
+        "codeExample": "/* PyTorch GPU Placement */\n# device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')\n# model.to(device)\n# tensor.to(device)"
+      },
+      {
+        "title": "Distributed Training Paradigms",
+        "content": "Scaling across multiple devices. Covers the two main paradigms: **Data Parallelism** (replicating the model on all GPUs, splitting the batch across them) and **Model Parallelism** (splitting the model layers across different GPUs, complex).",
+        "codeExample": "/* Data Parallelism Rationale */\n# Gradients are calculated locally on each GPU and then synchronized (averaged) to update the central weights."
+      },
+      {
+        "title": "Distributed Data Parallel (DDP)",
+        "content": "PyTorch's efficient method. Covers **Distributed Data Parallel (DDP)**, PyTorch's optimized technique for synchronization using the **`torch.distributed`** package, providing the highest training efficiency and scalability.",
+        "codeExample": "/* PyTorch DDP Setup */\n# torch.distributed.init_process_group(backend='nccl')\n# model = DDP(model, device_ids=[local_rank])"
+      },
+      {
+        "title": "Horovod and Communication Efficiency",
+        "content": "Uber's distributed training framework. Covers **Horovod**, which uses the **Ring All-Reduce** algorithm for efficient gradient synchronization across many GPUs, minimizing communication overhead compared to parameter server models.",
+        "codeExample": "/* Horovod Rationale */\n# Optimized for high-speed synchronization across a cluster."
+      },
+      {
+        "title": "Parameter Servers (Conceptual)",
+        "content": "An older synchronization method. Covers **Parameter Servers**, where a central server holds the master copy of the model weights and handles updates from worker GPUs. Often suffers from network bandwidth bottlenecks.",
+        "codeExample": "/* Parameter Server Flow */\n# Worker sends gradients to Server. Server updates weights. Server broadcasts new weights to Workers."
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "title": "On-Device ML (TensorFlow Lite) 📱",
+    "icon": "Code",
+    "subsections": [
+      {
+        "title": "On-Device ML Rationale",
+        "content": "The purpose of edge computing. Covers **On-Device ML** (running inference directly on the mobile/IoT device). Benefits include **low latency** (no network dependence), **privacy** (data stays local), and **offline availability**.",
+        "codeExample": "/* On-Device Benefit */\n# Faster response time for real-time tasks (e.g., gesture detection, live translation)."
+      },
+      {
+        "title": "TensorFlow Lite (TFLite)",
+        "content": "The primary framework for mobile deployment. Covers **TensorFlow Lite (TFLite)**, which optimizes TensorFlow models for small size and low latency on mobile (Android/iOS) and edge devices. Requires model conversion.",
+        "codeExample": "/* TFLite Conversion Goal */\n# Input: Keras Model (.h5) -> Output: TFLite Model (.tflite, highly optimized)"
+      },
+      {
+        "title": "Core ML and iOS Integration",
+        "content": "Apple's native framework. Covers **Apple's Core ML**, which allows integrating pre-trained models into iOS/macOS apps. Provides native performance benefits by leveraging the device's specialized Neural Engine hardware.",
+        "codeExample": "/* Core ML Rationale */\n# Optimized for Apple hardware."
+      },
+      {
+        "title": "Model Conversion and Optimization",
+        "content": "Preparing models for the edge. Covers the **Model Converter** (TFLite) used to transform the full model into a small, optimized flat buffer (`.tflite`). Optimization includes **Quantization** (reducing precision) and **Pruning**.",
+        "codeExample": "/* Conversion Tool */\n# tf.lite.TFLiteConverter.from_keras_model(model)"
+      },
+      {
+        "title": "Android/iOS Runtime Integration",
+        "content": "The final deployment step. Covers integrating the TFLite runtime libraries (via Java/Kotlin or Swift/Objective-C) into the native mobile application to load the `.tflite` file and execute inference.",
+        "codeExample": "/* Android Inference (Conceptual) */\n// Interpreter interpreter = new Interpreter(tfliteModelFile);\n// interpreter.run(inputTensor, outputTensor);"
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "title": "Model Compression and Quantization 💾",
+    "icon": "Code",
+    "subsections": [
+      {
+        "title": "Model Compression Rationale",
+        "content": "The necessity of reducing model size. Covers why model compression is vital for deployment in production environments (reduced latency, lower memory footprint, smaller storage costs, and faster transfer times).",
+        "codeExample": "/* Compression Goal */\n# Size reduction (e.g., 500MB -> 50MB) AND Latency reduction."
+      },
+      {
+        "title": "Quantization (8-bit, Post-Training)",
+        "content": "Reducing precision. Covers **Quantization**, the process of reducing the precision of model weights from 32-bit floating point numbers to lower-bit representations (e.g., 8-bit integers). This can reduce model size by 4x with minimal accuracy loss.",
+        "codeExample": "/* Post-Training Quantization */\n# Convert 32-bit floats -> 8-bit integers after training is complete."
+      },
+      {
+        "title": "Weight Pruning (Sparsity)",
+        "content": "Removing redundant connections. Covers **Pruning**, which identifies and removes the least important weights (connections) in the neural network, setting them to zero. This makes the weight matrix sparse, allowing for further compression.",
+        "codeExample": "/* Pruning Technique */\n# Unstructured Pruning: Removes individual weights.\n# Structured Pruning: Removes entire neurons or filters."
+      },
+      {
+        "title": "Knowledge Distillation",
+        "content": "Training a smaller student model. Covers **Knowledge Distillation**, where a large, accurate model (the teacher) trains a smaller, less accurate model (the student) by having the student learn the soft targets (probabilities) generated by the teacher, transferring knowledge efficiently.",
+        "codeExample": "/* Distillation Rationale */\n# Teacher model guides the training of the smaller Student model."
+      },
+      {
+        "title": "Hardware Acceleration (Specialized Chips)",
+        "content": "Leveraging specialized hardware. Covers optimizing models to run efficiently on specialized inference chips like **TPUs (Tensor Processing Units)**, **FPGAs**, or specialized edge ASICs, which are designed for high-speed, low-power inference.",
+        "codeExample": "/* Hardware Benefit */\n# ASIC chips are optimized for low-precision matrix operations."
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "title": "Reinforcement Learning (Conceptual) 🕹️",
+    "icon": "Code",
+    "subsections": [
+      {
+        "title": "RL Fundamentals (Agent, Environment, Reward)",
+        "content": "Defining the core concepts. Covers **Reinforcement Learning (RL)**, where an **Agent** learns to make optimal decisions by interacting with an **Environment** and receiving **Rewards** (or penalties). The goal is to maximize cumulative reward.",
+        "codeExample": "/* RL Components */\n# Agent: The learning model (e.g., deep neural network).\n# Environment: The simulator or real world (e.g., game, robot).\n# Reward: The feedback signal (e.g., +1 for a win)."
+      },
+      {
+        "title": "Markov Decision Processes (MDPs)",
+        "content": "The mathematical framework. Covers **MDPs** as the formal framework for sequential decision-making, defined by states, actions, transition probabilities, and rewards. RL algorithms solve the MDP problem when the transition probabilities are unknown.",
+        "codeExample": "/* MDP Goal */\n# Find the optimal policy that maps states to actions."
+      },
+      {
+        "title": "Policy-Based vs. Value-Based Methods",
+        "content": "Categorizing algorithms. Covers **Value-Based Methods** (e.g., Q-Learning, Deep Q-Networks/DQN), which learn a value function (expected reward). Details **Policy-Based Methods** (e.g., REINFORCE, A2C), which directly learn the optimal policy (the probability distribution over actions).",
+        "codeExample": "/* DQN Principle */\n# Learn the optimal action-value function Q*(s, a)."
+      },
+      {
+        "title": "Exploration vs. Exploitation",
+        "content": "The central challenge of learning. Covers the **Exploration-Exploitation Tradeoff**: the Agent must balance exploiting known, high-reward actions with exploring new, unknown actions that could lead to even higher rewards. Techniques like $\epsilon$-greedy are used.",
+        "codeExample": "/* Epsilon-Greedy Strategy */\n# With probability ε (e.g., 10%), choose a random action (Explore).\n# With probability 1-ε (e.g., 90%), choose the best known action (Exploit)."
+      },
+      {
+        "title": "Deep Reinforcement Learning (DRL)",
+        "content": "Combining RL with deep learning. Covers **Deep Reinforcement Learning (DRL)**, where neural networks (deep learning) are used to represent the value function or the policy, enabling RL algorithms to handle high-dimensional state spaces (e.g., image input).",
+        "codeExample": "/* DRL Application */\n# Deep Q-Network (DQN) uses a CNN to process video game screen input (state)."
+      }
+    ]
+  }
+]
+  },
+  ai_ml_4: {
+    id: 'ai_ml_4',
+    title: 'Artificial Intelligence and Machine Language : Part IV',
+    icon: BrainCircuit,
+    color: '#6b6d6f',
+    description: 'MLOps, Deployment, and Ethics',
+    units: [
+  {
+    "id": 35,
+    "title": "MLOps: Pipeline Automation and CI/CD 🔄",
+    "icon": "Code",
+    "subsections": [
+      {
+        "title": "ML Pipeline Automation",
+        "content": "Structuring the end-to-end ML workflow. Covers defining the **ML Pipeline** stages (Data Ingestion, Preprocessing, Training, Evaluation, Deployment) and using tools (e.g., **Kubeflow, Airflow**) to automate the entire workflow, eliminating manual intervention.",
+        "codeExample": "/* Pipeline Stages (Conceptual) */\n# Trigger -> Data Prep -> Model Train -> Model Evaluate -> Model Register -> Deployment"
+      },
+      {
+        "title": "CI/CD for Machine Learning",
+        "content": "Adapting DevOps for ML. Covers **Continuous Integration (CI)** (automated testing of code, logic, and data schema) and **Continuous Delivery/Deployment (CD)** (automatically deploying the model as a service or container upon successful evaluation).",
+        "codeExample": "/* CI/CD Goal */\n# Ensure every change to the code or data automatically results in a validated model."
+      },
+      {
+        "title": "Data and Model Versioning",
+        "content": "Tracking lineage. Covers the need to version **Code, Data, and Models** simultaneously to ensure reproducibility. Tools like **DVC (Data Version Control)** and **MLflow** are used to track the exact data and hyperparameters used to generate a specific model artifact.",
+        "codeExample": "/* Reproducibility Check */\n# Model v2.1 = Code v1.3 + Data v5.0 + Hyperparameters (LR=0.01)"
+      },
+      {
+        "title": "Orchestration Tools (Airflow, Kubeflow)",
+        "content": "Managing complex dependencies. Covers **Apache Airflow** (for scheduling and managing workflows as Directed Acyclic Graphs, DAGs) and **Kubeflow** (ML toolkit for deploying and managing ML workflows on Kubernetes).",
+        "codeExample": "/* Airflow DAG Task (Conceptual) */\n# Task 1: Clean Data (PythonOperator)\n# Task 2: Train Model (BashOperator calling PyTorch script)\n# Task 3: Evaluate Model (PythonOperator)"
+      },
+      {
+        "title": "Testing in MLOps (Data, Model, Integration)",
+        "content": "Defining tests unique to ML. Covers **Data Validation Tests** (checking data schema, range, and statistical drift), **Model Tests** (checking performance metrics against a minimum baseline), and **Integration Tests** (checking the deployed API response).",
+        "codeExample": "/* Model Baseline Test */\n# require(test_accuracy > 0.85, 'Model accuracy failed to meet baseline.')"
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "title": "Model Versioning and Registry (MLflow/DVC) 📁",
+    "icon": "List",
+    "subsections": [
+      {
+        "title": "Model Registry and Artifact Management",
+        "content": "The central repository for models. Covers the **Model Registry** (a component of tools like **MLflow**) used to store, version, and manage the lifecycle stages (Staging, Production, Archived) of trained models. Artifacts (model files, metadata) are stored here.",
+        "codeExample": "/* Model Registry Lifecycle */\n# Register Model V1 -> Transition to Staging -> Transition to Production"
+      },
+      {
+        "title": "MLflow Tracking Server",
+        "content": "Tracking experiments. Covers **MLflow Tracking** to log model parameters, metrics, and source code during training runs. This creates a central historical record of every experiment, enabling easy comparison and reproducibility.",
+        "codeExample": "/* MLflow Tracking (Python) */\nimport mlflow\nmlflow.log_param(\"learning_rate\", lr)\nmlflow.log_metric(\"val_accuracy\", acc)"
+      },
+      {
+        "title": "Data Version Control (DVC)",
+        "content": "Version control for data. Covers **DVC (Data Version Control)**, which works with Git to version data and model files by storing metadata and hashes in Git, while the large data files themselves are stored externally (S3, GCS). This solves the large-file problem in Git.",
+        "codeExample": "/* DVC Command */\n# dvc add data/raw_data.csv # Adds data hash to DVC metadata\n# git commit -m 'Updated DVC pointer to new data version'"
+      },
+      {
+        "title": "Reproducibility via Versioning",
+        "content": "Ensuring the ability to recreate any result. Covers the combination of **Code Version (Git), Data Version (DVC/Artifacts), and Environment Version (Conda/Docker)** to create a fully reproducible snapshot of a model's origin.",
+        "codeExample": "/* Reproducibility Stack */\n# Git Commit Hash + DVC Lock File + Docker Image Tag"
+      },
+      {
+        "title": "A/B Testing Integration",
+        "content": "Using the registry in deployment. Covers integrating the Model Registry with **Model Serving** infrastructure to easily switch model versions for **A/B Testing** (e.g., serving Model V1 to 90% of users and Model V2 to 10% of users).",
+        "codeExample": "/* A/B Test Deployment Goal */\n# If Model V2 performance is better than Model V1 after 2 weeks, promote V2 to 100%."
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "title": "Model Serving (Flask/FastAPI) and API Design 📡",
+    "icon": "Code",
+    "subsections": [
+      {
+        "title": "REST API Design for Inference",
+        "content": "Designing the endpoint for predictions. Covers creating a simple **REST API** (using Flask or FastAPI) with an endpoint (`/predict`) that accepts input data (JSON) and returns the model's prediction (JSON). Emphasizes using efficient, lightweight frameworks for low-latency serving.",
+        "codeExample": "/* FastAPI Predict Endpoint */\nfrom fastapi import FastAPI\n\napp = FastAPI()\n# @app.post(\"/predict\")\n# def predict(data: InputSchema):\n#     # Load model and return prediction"
+      },
+      {
+        "title": "Model Loading and Initialization",
+        "content": "Minimizing cold-start latency. Covers the practice of **loading the model artifact into memory** only once during the application startup phase (initialization). This prevents high latency on the very first prediction request (cold start).",
+        "codeExample": "/* Model Initialization (FastAPI Startup) */\n# from fastapi import FastAPI\n# model = None\n# @app.on_event(\"startup\")\n# async def startup_event():\n#     global model\n#     model = load_model_from_disk('model.pkl')"
+      },
+      {
+        "title": "Prediction Latency and Throughput",
+        "content": "Measuring serving performance. Covers key metrics: **Latency** (time taken for a single request to return a prediction) and **Throughput** (number of requests processed per second). Optimization involves using optimized frameworks (FastAPI) and batching requests.",
+        "codeExample": "/* Performance Metric */\n# Goal: P95 Latency < 100ms (95% of requests complete in under 100 milliseconds)."
+      },
+      {
+        "title": "Batch Inference and Asynchronous Serving",
+        "content": "Optimizing resource usage. Covers **Batch Inference** (processing multiple requests simultaneously to maximize GPU utilization) and designing **Asynchronous APIs** (using background workers) for long-running inference tasks (e.g., processing a large video file).",
+        "codeExample": "/* Asynchronous Serving Rationale */\n# Returns a request ID immediately, allowing the client to poll for the final result later."
+      },
+      {
+        "title": "Input Schema Validation (Pydantic)",
+        "content": "Ensuring API robustness. Covers using **Pydantic** (in FastAPI) or similar libraries to define the exact input data schema and automatically validate incoming JSON requests, rejecting malformed data before it reaches the model.",
+        "codeExample": "/* Pydantic Schema Validation (FastAPI) */\nfrom pydantic import BaseModel\n\nclass InputSchema(BaseModel):\n    feature_a: float\n    feature_b: int\n    # FastAPI automatically ensures input data conforms to this structure."
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "title": "Containerization (Docker/Kubernetes) for ML 🐳",
+    "icon": "List",
+    "subsections": [
+      {
+        "title": "Docker for Reproducible Environments",
+        "content": "Ensuring consistency across environments. Covers using **Docker** to package the entire inference stack (operating system, Python version, dependencies, model artifact, serving code) into a single, portable **Docker Image**, eliminating 'works on my machine' issues.",
+        "codeExample": "/* Dockerfile Snippet */\nFROM python:3.9-slim\nWORKDIR /app\nCOPY requirements.txt .\nRUN pip install -r requirements.txt\nCOPY . .\nCMD [\"gunicorn\", \"main:app\"]"
+      },
+      {
+        "title": "Multi-Stage Builds (Size Optimization)",
+        "content": "Minimizing image size. Covers **Multi-Stage Docker Builds** to separate the build environment (where compilation and large dev tools happen) from the final, minimal runtime environment, significantly reducing the final image size and deployment time.",
+        "codeExample": "/* Multi-Stage Build Rationale */\n# Stage 1: Build (3GB image) -> Stage 2: Runtime (300MB image, only includes artifacts)"
+      },
+      {
+        "title": "Kubernetes for Scaling and Orchestration",
+        "content": "Managing production deployment. Covers **Kubernetes (K8s)** for orchestrating multiple Docker containers (**Pods**). Details using **Deployments** (to manage replicas), **Services** (for load balancing), and **Ingress** (for external access) to ensure high availability and scalability of the inference API.",
+        "codeExample": "/* Kubernetes Deployment YAML (Snippet) */\nspec:\n  replicas: 3\n  template:\n    spec:\n      containers:\n      - name: model-server\n        image: my-repo/model-api:latest\n        resources:\n          limits: { cpu: \"1\", memory: \"2Gi\" }"
+      },
+      {
+        "title": "Horizontal Pod Autoscaling (HPA)",
+        "content": "Automating scaling based on load. Covers **Horizontal Pod Autoscaling (HPA)** in Kubernetes, which automatically adjusts the number of deployed model replicas (pods) based on real-time metrics, typically CPU utilization or custom latency metrics.",
+        "codeExample": "/* HPA Trigger */\n# If average CPU utilization exceeds 70%, increase replicas."
+      },
+      {
+        "title": "GPU Support in Containers",
+        "content": "Deploying deep learning models. Covers configuring Docker and Kubernetes (using **NVIDIA Container Toolkit/Device Plugins**) to expose GPU resources to specific containers, which is necessary for high-performance deep learning inference.",
+        "codeExample": "/* Kubernetes GPU Resource Request */\nresources:\n  limits:\n    nvidia.com/gpu: 1"
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "title": "Cloud ML Platforms (AWS/Azure/GCP) ☁️",
+    "icon": "List",
+    "subsections": [
+      {
+        "title": "Platform Comparison (SageMaker, Vertex AI, Azure ML)",
+        "content": "Overview of major cloud ML offerings. Covers **AWS SageMaker**, **Google Cloud Vertex AI**, and **Azure Machine Learning**, comparing their managed services for data labeling, notebook environments, model training, and MLOps automation.",
+        "codeExample": "/* Cloud Platform Feature Rationale */\n# Vertex AI: Strong integration with Google's MLOps and BigQuery.\n# SageMaker: Broadest set of tools and integration with AWS services (S3, Lambda)."
+      },
+      {
+        "title": "Managed Training and Hyperparameter Tuning",
+        "content": "Using cloud services to scale training. Covers running large-scale training jobs and automated **Hyperparameter Tuning** experiments on distributed cloud infrastructure without manually provisioning VMs or GPUs.",
+        "codeExample": "/* Vertex AI Training Flow (Conceptual) */\n# 1. Provide custom training script and Docker image.\n# 2. Configure GPU type and scale tier.\n# 3. Platform manages infrastructure and scaling."
+      },
+      {
+        "title": "Model Endpoint Deployment and Scaling",
+        "content": "Deploying models as high-availability endpoints. Covers creating a managed **Inference Endpoint** (e.g., SageMaker Endpoint) that handles auto-scaling, load balancing, and health checks automatically for production traffic.",
+        "codeExample": "/* Endpoint Deployment Benefit */\n# Cloud platform handles infrastructure overhead, freeing developers to focus on model logic."
+      },
+      {
+        "title": "Cloud Feature Stores",
+        "content": "Centralizing feature serving. Covers **Feature Stores** (e.g., Vertex AI Feature Store), which centralize and serve precomputed features consistently across both **Training** (historical consistency) and **Inference** (low latency).",
+        "codeExample": "/* Feature Store Rationale */\n# Prevents Training-Serving Skew (inconsistent feature calculation between environments)."
+      },
+      {
+        "title": "Serverless Inference (Lambda, Cloud Functions)",
+        "content": "Cost-effective serving for low traffic. Covers deploying small, lightweight models to **Serverless Compute** (e.g., AWS Lambda, Google Cloud Functions). Ideal for sporadic or low-volume prediction requests where paying only per invocation is cost-effective.",
+        "codeExample": "/* Serverless Use Case */\n# Processing background jobs, image classification on upload, or low-frequency API endpoints."
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "title": "Feature Stores and Data Pipelines 📦",
+    "icon": "Code",
+    "subsections": [
+      {
+        "title": "Feature Store Architecture",
+        "content": "The system for managing features. Covers the **Feature Store** as the centralized data layer designed to manage and serve feature data consistently. Key components include an **Online Store** (low latency, Redis/Cassandra) for serving inference and an **Offline Store** (high throughput, S3/BigQuery) for training.",
+        "codeExample": "/* Feature Store Components */\n# Online Store: Inference (low latency, high freshness)\n# Offline Store: Training (high volume, historical data)"
+      },
+      {
+        "title": "Training-Serving Skew Mitigation",
+        "content": "The primary problem solved by feature stores. Covers **Training-Serving Skew**—the performance degradation that occurs when features used during training are calculated differently than features used during serving. The Feature Store guarantees consistent feature logic.",
+        "codeExample": "/* Feature Consistency Check */\n# Feature Store ensures the exact feature transformation function (e.g., z-score scaling) is used for both training and serving."
+      },
+      {
+        "title": "Data Pipeline Orchestration (Airflow, Dagster)",
+        "content": "Building reliable data flows. Covers using **Airflow** or **Dagster** to orchestrate complex **ETL/ELT** pipelines that ingest raw data, perform feature transformations, and materialize (pre-calculate) features into the Feature Store.",
+        "codeExample": "/* Airflow Task Example */\n# Task: Transform_Raw_Data -> Task: Calculate_Feature_Vector -> Task: Materialize_To_FeatureStore"
+      },
+      {
+        "title": "Streaming vs. Batch Feature Updates",
+        "content": "Managing feature freshness. Covers **Batch Updates** (updating features periodically, e.g., daily) for static data and **Streaming Updates** (using Kafka/PubSub) for features requiring high freshness (e.g., current user click rates).",
+        "codeExample": "/* Feature Freshness Rationale */\n# Real-time data (stock prices, fraud signals) requires streaming updates."
+      },
+      {
+        "title": "Feature Discovery and Governance",
+        "content": "Organizing feature data. Covers the importance of **Feature Discovery** (cataloging available features with metadata and lineage) and **Governance** (managing access controls and feature deprecation) within the Feature Store.",
+        "codeExample": "/* Feature Lineage Tracking */\n# Tracking which upstream tables and transformation scripts contributed to a specific feature."
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "title": "Model Monitoring and Drift Detection 📈",
+    "icon": "Code",
+    "subsections": [
+      {
+        "title": "Inference Monitoring Metrics",
+        "content": "Tracking model health in production. Covers essential production metrics: **Prediction Count**, **Latency (P95)**, **Error Rate**, and **Resource Utilization** (CPU/GPU load).",
+        "codeExample": "/* Latency Metric Goal */\n# P95 (95th percentile) latency should remain below 100ms."
+      },
+      {
+        "title": "Data Drift Detection",
+        "content": "Monitoring input stability. Covers **Data Drift**—when the statistical properties of the input features in production data change significantly compared to the training data. Tools like **Kolmogorov-Smirnov (KS) test** or **Population Stability Index (PSI)** are used to detect this.",
+        "codeExample": "/* Data Drift Rationale */\n# If the distribution of a feature (e.g., 'age') changes, the model's performance will degrade."
+      },
+      {
+        "title": "Concept Drift Detection",
+        "content": "Monitoring relationship stability. Covers **Concept Drift**—when the relationship between the input features and the target variable changes (the underlying concept the model learned becomes stale). This is often detected by monitoring the model's **Prediction Accuracy** or **Error Rate** over time.",
+        "codeExample": "/* Concept Drift Indication */\n# Model accuracy drops significantly even though input data remains statistically similar to training data."
+      },
+      {
+        "title": "A/B Testing and Canary Deployment",
+        "content": "Safely rolling out new models. Covers **A/B Testing** (routing traffic to compare Model V1 vs. Model V2 performance) and **Canary Deployment** (gradually shifting a small percentage of traffic to the new model) to test performance and stability before full rollout.",
+        "codeExample": "/* Canary Deployment Flow */\n# Traffic Split: Model Old (99%) -> Model New (1%)"
+      },
+      {
+        "title": "Alerting and Incident Response",
+        "content": "Automating failure notification. Covers setting up **Alerts** based on thresholds (e.g., error rate > 5%, latency > 200ms). Defines the process for **Incident Response**: automated rollback to the last known good version (LKG) when critical metrics fail.",
+        "codeExample": "/* Automated Rollback Rule */\n# IF Accuracy(New) < Accuracy(Old) - 5% THEN Deploy(Model LKG)."
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "title": "Explainable AI (XAI) and Interpretability ❓",
+    "icon": "Code",
+    "subsections": [
+      {
+        "title": "Model Interpretability vs. Explainability",
+        "content": "Distinguishing goals. **Interpretability** is the degree to which a human can understand the *cause* of a decision (e.g., Decision Trees). **Explainability (XAI)** refers to techniques used to explain the *output* of complex, opaque models (e.g., LIME, SHAP).",
+        "codeExample": "/* Distinction */\n# Decision Tree: Interpretable (Directly readable)\n# Neural Network: Explainable (Requires post-hoc tools)"
+      },
+      {
+        "title": "SHAP (SHapley Additive explanations)",
+        "content": "A unified, game-theory approach. Covers **SHAP** values, which assign an importance value (Shapley value) to every feature for a specific prediction, ensuring local fidelity (explanation matches model locally) and consistency.",
+        "codeExample": "/* SHAP Interpretation */\n# Feature X contributed +10% to the probability of Class A for this specific user."
+      },
+      {
+        "title": "LIME (Local Interpretable Model-agnostic Explanations)",
+        "content": "Generating local explanations. Covers **LIME**, which creates a simple, local, linear model around a single instance's prediction to explain the complex model's behavior for that specific prediction. Model-agnostic and widely applicable.",
+        "codeExample": "/* LIME Rationale */\n# Explain a black box by approximating it locally with a simple, linear model."
+      },
+      {
+        "title": "Feature Importance (Global Interpretability)",
+        "content": "Understanding the overall model. Covers **Global Feature Importance** (e.g., permutation importance, coefficient magnitude) to identify which features are generally most influential across the entire dataset, guiding model refinement and domain understanding.",
+        "codeExample": "/* Permutation Importance */\n# Measure how much the model's accuracy decreases when the values of a single feature are randomly shuffled."
+      },
+      {
+        "title": "Anchors and Counterfactual Explanations",
+        "content": "Advanced XAI concepts. Covers **Anchors** (minimal, necessary conditions sufficient to guarantee a prediction). Details **Counterfactual Explanations** (describing the smallest change to an input feature that would flip the model's prediction).",
+        "codeExample": "/* Counterfactual Example */\n# Prediction: Loan denied.\n# Counterfactual: If your income was $10,000 higher, the loan would be approved."
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "title": "ML Model Security and Privacy 🔒",
+    "icon": "Code",
+    "subsections": [
+      {
+        "title": "Adversarial Attacks and Evasion",
+        "content": "Exploiting model vulnerability. Covers **Adversarial Attacks**, where small, imperceptible perturbations (noise) are added to input data to force the model to misclassify (e.g., making a stop sign look like a yield sign). **Evasion Attacks** happen at inference time.",
+        "codeExample": "/* Adversarial Attack Principle */\n# Human sees Image A. Model sees Image A + Noise (Model predicts Class B)."
+      },
+      {
+        "title": "Data Poisoning and Integrity",
+        "content": "Attacks on the training data. Covers **Data Poisoning** (injecting malicious data into the training set) to either degrade the model's overall performance or introduce specific backdoors (hidden triggers) that the attacker can later exploit.",
+        "codeExample": "/* Data Poisoning Defense */\n# Robust data validation and outlier detection during the ingestion pipeline."
+      },
+      {
+        "title": "Model Extraction and Intellectual Property",
+        "content": "Stealing the model. Covers **Model Extraction/Theft**, where an attacker queries the prediction API repeatedly to reconstruct a functional copy of the proprietary model's weights and architecture. Mitigation involves query limitations and defense mechanisms.",
+        "codeExample": "/* Model Extraction Defense */\n# Rate limiting, adding noise to prediction outputs, or monitoring query patterns."
+      },
+      {
+        "title": "Differential Privacy (DP)",
+        "content": "Protecting training data confidentiality. Covers **Differential Privacy (DP)**, a formal framework that adds controlled noise to the input data or model weights during training to ensure that the presence or absence of any single individual's data does not significantly alter the resulting model.",
+        "codeExample": "/* DP Goal */\n# Prevent an attacker from inferring sensitive information about an individual in the training set."
+      },
+      {
+        "title": "Federated Learning (Privacy-Preserving)",
+        "content": "Training models on decentralized data. Covers **Federated Learning**, where models are trained locally on client devices (e.g., phones, hospitals) and only the aggregated weight updates (gradients) are shared with the central server. This keeps sensitive raw data localized and private.",
+        "codeExample": "/* Federated Learning Flow */\n# Data stays on Device -> Device trains local model -> Central Server averages gradients from all devices."
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "title": "Bias, Fairness, and Ethical AI 🎯",
+    "icon": "Code",
+    "subsections": [
+      {
+        "title": "Sources of Bias (Data vs. Algorithm)",
+        "content": "Identifying the origins of unfairness. Covers **Historical Bias** (bias in the real-world data reflecting societal prejudice) and **Measurement Bias** (flaws in the data collection process). Explains that bias in the data is inherited and amplified by the algorithm.",
+        "codeExample": "/* Bias Source */\n# Data Bias: Underrepresentation of a specific demographic in the training set."
+      },
+      {
+        "title": "Fairness Metrics (Demographic Parity, Equal Opportunity)",
+        "content": "Quantifying unfairness. Covers defining **Fairness** using statistical metrics for protected groups (e.g., gender, race). **Demographic Parity** requires equal positive outcome rates across groups. **Equal Opportunity** requires equal True Positive Rates (Recall) across groups.",
+        "codeExample": "/* Equal Opportunity Goal */\n# True Positive Rate (Recall) must be equal for Group A and Group B."
+      },
+      {
+        "title": "Mitigation Techniques (Pre-Processing, In-Processing)",
+        "content": "Correcting bias. Covers **Pre-Processing** (re-weighting or re-sampling the data before training). **In-Processing** (adding a fairness constraint or regularization term to the loss function during training). **Post-Processing** (adjusting the prediction threshold after training).",
+        "codeExample": "/* Pre-Processing Technique */\n# Up-sampling (duplicating) underrepresented class samples to balance the training set."
+      },
+      {
+        "title": "Transparency and Accountability",
+        "content": "Ethical obligations. Covers the need for **Transparency** (documenting data sources, model limitations, and evaluation metrics) and **Accountability** (establishing clear responsibility for model outcomes, especially in high-stakes decisions).",
+        "codeExample": "/* Model Card Requirement */\n# Documentation should include: intended use, limitations, and fairness evaluations."
+      },
+      {
+        "title": "AI Audits and Regulatory Compliance",
+        "content": "External validation. Covers conducting independent **AI Audits** to check for security and ethical flaws. Discusses compliance with major regulations (e.g., **GDPR**'s 'Right to Explanation' for automated decisions).",
+        "codeExample": "/* Compliance Requirement */\n# For regulated decisions (e.g., loan approval), the system must provide a human-understandable reason for the outcome."
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "title": "Distributed Training and GPU Management ⚡",
+    "icon": "Code",
+    "subsections": [
+      {
+        "title": "GPU Acceleration and CUDA",
+        "content": "Hardware for deep learning. Covers the role of **GPUs** (Graphics Processing Units) in accelerating matrix multiplication due to their massive parallel architecture. **CUDA** is NVIDIA's parallel computing platform essential for using PyTorch and TensorFlow efficiently.",
+        "codeExample": "/* PyTorch GPU Placement */\n# device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')\n# model.to(device)\n# tensor.to(device)"
+      },
+      {
+        "title": "Distributed Training Paradigms",
+        "content": "Scaling across multiple devices. Covers the two main paradigms: **Data Parallelism** (replicating the model on all GPUs, splitting the batch across them) and **Model Parallelism** (splitting the model layers across different GPUs, complex).",
+        "codeExample": "/* Data Parallelism Rationale */\n# Gradients are calculated locally on each GPU and then synchronized (averaged) to update the central weights."
+      },
+      {
+        "title": "Distributed Data Parallel (DDP)",
+        "content": "PyTorch's efficient method. Covers **Distributed Data Parallel (DDP)**, PyTorch's optimized technique for synchronization using the **`torch.distributed`** package, providing the highest training efficiency and scalability.",
+        "codeExample": "/* PyTorch DDP Setup */\n# torch.distributed.init_process_group(backend='nccl')\n# model = DDP(model, device_ids=[local_rank])"
+      },
+      {
+        "title": "Horovod and Communication Efficiency",
+        "content": "Uber's distributed training framework. Covers **Horovod**, which uses the **Ring All-Reduce** algorithm for efficient gradient synchronization across many GPUs, minimizing communication overhead compared to parameter server models.",
+        "codeExample": "/* Horovod Rationale */\n# Optimized for high-speed synchronization across a cluster."
+      },
+      {
+        "title": "Parameter Servers (Conceptual)",
+        "content": "An older synchronization method. Covers **Parameter Servers**, where a central server holds the master copy of the model weights and handles updates from worker GPUs. Often suffers from network bandwidth bottlenecks.",
+        "codeExample": "/* Parameter Server Flow */\n# Worker sends gradients to Server. Server updates weights. Server broadcasts new weights to Workers."
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "title": "On-Device ML (TensorFlow Lite) 📱",
+    "icon": "Code",
+    "subsections": [
+      {
+        "title": "On-Device ML Rationale",
+        "content": "The purpose of edge computing. Covers **On-Device ML** (running inference directly on the mobile/IoT device). Benefits include **low latency** (no network dependence), **privacy** (data stays local), and **offline availability**.",
+        "codeExample": "/* On-Device Benefit */\n# Faster response time for real-time tasks (e.g., gesture detection, live translation)."
+      },
+      {
+        "title": "TensorFlow Lite (TFLite)",
+        "content": "The primary framework for mobile deployment. Covers **TensorFlow Lite (TFLite)**, which optimizes TensorFlow models for small size and low latency on mobile (Android/iOS) and edge devices. Requires model conversion.",
+        "codeExample": "/* TFLite Conversion Goal */\n# Input: Keras Model (.h5) -> Output: TFLite Model (.tflite, highly optimized)"
+      },
+      {
+        "title": "Core ML and iOS Integration",
+        "content": "Apple's native framework. Covers **Apple's Core ML**, which allows integrating pre-trained models into iOS/macOS apps. Provides native performance benefits by leveraging the device's specialized Neural Engine hardware.",
+        "codeExample": "/* Core ML Rationale */\n# Optimized for Apple hardware."
+      },
+      {
+        "title": "Model Conversion and Optimization",
+        "content": "Preparing models for the edge. Covers the **Model Converter** (TFLite) used to transform the full model into a small, optimized flat buffer (`.tflite`). Optimization includes **Quantization** (reducing precision) and **Pruning**.",
+        "codeExample": "/* Conversion Tool */\n# tf.lite.TFLiteConverter.from_keras_model(model)"
+      },
+      {
+        "title": "Android/iOS Runtime Integration",
+        "content": "The final deployment step. Covers integrating the TFLite runtime libraries (via Java/Kotlin or Swift/Objective-C) into the native mobile application to load the `.tflite` file and execute inference.",
+        "codeExample": "/* Android Inference (Conceptual) */\n// Interpreter interpreter = new Interpreter(tfliteModelFile);\n// interpreter.run(inputTensor, outputTensor);"
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "title": "Model Compression and Quantization 💾",
+    "icon": "Code",
+    "subsections": [
+      {
+        "title": "Model Compression Rationale",
+        "content": "The necessity of reducing model size. Covers why model compression is vital for deployment in production environments (reduced latency, lower memory footprint, smaller storage costs, and faster transfer times).",
+        "codeExample": "/* Compression Goal */\n# Size reduction (e.g., 500MB -> 50MB) AND Latency reduction."
+      },
+      {
+        "title": "Quantization (8-bit, Post-Training)",
+        "content": "Reducing precision. Covers **Quantization**, the process of reducing the precision of model weights from 32-bit floating point numbers to lower-bit representations (e.g., 8-bit integers). This can reduce model size by **4x** with minimal accuracy loss.",
+        "codeExample": "/* Post-Training Quantization */\n# Convert 32-bit floats -> 8-bit integers after training is complete."
+      },
+      {
+        "title": "Weight Pruning (Sparsity)",
+        "content": "Removing redundant connections. Covers **Pruning**, which identifies and removes the least important weights (connections) in the neural network, setting them to zero. This makes the weight matrix sparse, allowing for further compression.",
+        "codeExample": "/* Pruning Technique */\n# Unstructured Pruning: Removes individual weights.\n# Structured Pruning: Removes entire neurons or filters."
+      },
+      {
+        "title": "Knowledge Distillation",
+        "content": "Training a smaller student model. Covers **Knowledge Distillation**, where a large, accurate model (the teacher) trains a smaller, less accurate model (the student) by having the student learn the soft targets (probabilities) generated by the teacher, transferring knowledge efficiently.",
+        "codeExample": "/* Distillation Rationale */\n# Teacher model guides the training of the smaller Student model."
+      },
+      {
+        "title": "Hardware Acceleration (Specialized Chips)",
+        "content": "Leveraging specialized hardware. Covers optimizing models to run efficiently on specialized inference chips like **TPUs (Tensor Processing Units)**, **FPGAs**, or specialized edge ASICs, which are designed for high-speed, low-power inference.",
+        "codeExample": "/* Hardware Benefit */\n# ASIC chips are optimized for low-precision matrix operations."
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "title": "Reinforcement Learning (Conceptual) 🕹️",
+    "icon": "Code",
+    "subsections": [
+      {
+        "title": "RL Fundamentals (Agent, Environment, Reward)",
+        "content": "Defining the core concepts. Covers **Reinforcement Learning (RL)**, where an **Agent** learns to make optimal decisions by interacting with an **Environment** and receiving **Rewards** (or penalties). The goal is to maximize cumulative reward.",
+        "codeExample": "/* RL Components */\n# Agent: The learning model (e.g., deep neural network).\n# Environment: The simulator or real world (e.g., game, robot).\n# Reward: The feedback signal (e.g., +1 for a win)."
+      },
+      {
+        "title": "Markov Decision Processes (MDPs)",
+        "content": "The mathematical framework. Covers **MDPs** as the formal framework for sequential decision-making, defined by states, actions, transition probabilities, and rewards. RL algorithms solve the MDP problem when the transition probabilities are unknown.",
+        "codeExample": "/* MDP Goal */\n# Find the optimal policy that maps states to actions."
+      },
+      {
+        "title": "Policy-Based vs. Value-Based Methods",
+        "content": "Categorizing algorithms. Covers **Value-Based Methods** (e.g., Q-Learning, Deep Q-Networks/DQN), which learn a value function (expected reward). Details **Policy-Based Methods** (e.g., REINFORCE, A2C), which directly learn the optimal policy (the probability distribution over actions).",
+        "codeExample": "/* DQN Principle */\n# Learn the optimal action-value function Q*(s, a)."
+      },
+      {
+        "title": "Exploration vs. Exploitation",
+        "content": "The central challenge of learning. Covers the **Exploration-Exploitation Tradeoff**: the Agent must balance exploiting known, high-reward actions with exploring new, unknown actions that could lead to even higher rewards. Techniques like $\epsilon$-greedy are used.",
+        "codeExample": "/* Epsilon-Greedy Strategy */\n# With probability ε (e.g., 10%), choose a random action (Explore).\n# With probability 1-ε (e.g., 90%), choose the best known action (Exploit)."
+      },
+      {
+        "title": "Deep Reinforcement Learning (DRL)",
+        "content": "Combining RL with deep learning. Covers **Deep Reinforcement Learning (DRL)**, where neural networks (deep learning) are used to represent the value function or the policy, enabling RL algorithms to handle high-dimensional state spaces (e.g., image input).",
+        "codeExample": "/* DRL Application */\n# Deep Q-Network (DQN) uses a CNN to process video game screen input (state)."
+      }
+    ]
+  }
+]
   }
 };
-
 function App() {
   const [selectedBook, setSelectedBook] = useState(null);
   const [selectedUnit, setSelectedUnit] = useState(null);
